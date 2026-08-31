@@ -1,4 +1,12 @@
 {
   "title": "FiveM",
-  "pages": ["server-status", "stats-channels", "restarts", "tebex", "sits", "gangs"]
+  "pages": [
+    "server-status",
+    "stats-channels",
+    "restarts",
+    "tebex",
+    "sits",
+    "gangs"
+  ],
+  "icon": "Server"
 }

@@ -1,4 +1,11 @@
 {
   "title": "Members",
-  "pages": ["roles", "welcome", "verification", "levelling", "suggestions"]
+  "pages": [
+    "roles",
+    "welcome",
+    "verification",
+    "levelling",
+    "suggestions"
+  ],
+  "icon": "Sparkles"
 }

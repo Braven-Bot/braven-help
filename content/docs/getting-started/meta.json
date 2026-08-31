@@ -1,4 +1,10 @@
 {
   "title": "Getting started",
-  "pages": ["quick-start", "permissions", "modules", "commands"]
+  "pages": [
+    "quick-start",
+    "permissions",
+    "modules",
+    "commands"
+  ],
+  "icon": "Rocket"
 }

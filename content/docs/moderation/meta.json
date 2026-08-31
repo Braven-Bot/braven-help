@@ -1,4 +1,10 @@
 {
   "title": "Moderation",
-  "pages": ["actions", "records", "automod", "raid"]
+  "pages": [
+    "actions",
+    "records",
+    "automod",
+    "raid"
+  ],
+  "icon": "Shield"
 }

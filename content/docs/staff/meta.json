@@ -1,4 +1,13 @@
 {
   "title": "Staff management",
-  "pages": ["duty", "activity", "quotas", "infractions", "loa", "applications", "feedback"]
+  "pages": [
+    "duty",
+    "activity",
+    "quotas",
+    "infractions",
+    "loa",
+    "applications",
+    "feedback"
+  ],
+  "icon": "Users"
 }

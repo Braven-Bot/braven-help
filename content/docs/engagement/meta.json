@@ -1,4 +1,10 @@
 {
   "title": "Engagement",
-  "pages": ["announcements", "birthdays", "giveaways-polls", "messages"]
+  "pages": [
+    "announcements",
+    "birthdays",
+    "giveaways-polls",
+    "messages"
+  ],
+  "icon": "Megaphone"
 }

@@ -1,4 +1,12 @@
 {
   "title": "Tickets",
-  "pages": ["overview", "panels", "categories", "working-a-ticket", "transcripts", "forms"]
+  "pages": [
+    "overview",
+    "panels",
+    "categories",
+    "working-a-ticket",
+    "transcripts",
+    "forms"
+  ],
+  "icon": "Ticket"
 }
