@@ -1,0 +1,34 @@
+---
+title: Automod
+description: "Invites, mass mentions, spam, caps, banned words and links."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+Six independent rules, each with its own action and its own exemptions:
+
+| Rule | Catches |
+| --- | --- |
+| **Invites** | Discord invite links to other servers. |
+| **Mass mention** | More than N mentions in one message. |
+| **Spam** | The same message repeated, or messages too fast. |
+| **Caps** | Messages over a percentage of capitals. |
+| **Words** | A list you set. |
+| **Links** | URLs, with an allowlist. |
+
+Each rule deletes, warns, or times the member out. Roles and channels can be exempt
+per rule, so staff and your bot-commands channel are not caught by the same net.
+
+## Commands
+
+### `/automod`
+
+Configure automatic moderation
+
+| Subcommand | What it does |
+| --- | --- |
+| `/automod set` | Turn a rule on or off and choose what it does |
+| `/automod words` | Set the filtered word list |
+| `/automod links` | Set the allowed link hosts |
+| `/automod exempt` | Exempt a role or channel from one rule |
+| `/automod list` | Show every rule and its settings |

@@ -1,0 +1,53 @@
+---
+title: Modules
+description: "Switch any Braven feature on or off for your server."
+---
+
+Braven ships with a lot. Modules are how you turn off the parts you do not want.
+
+```
+/modules view
+/modules disable module:levelling
+/modules enable module:levelling
+```
+
+## Modules are not a plan
+
+They are two separate ideas, and Braven keeps them separate on purpose:
+
+- A **switched-off module** is your choice. The feature stays silent — no refusal,
+  no upgrade prompt, no nagging.
+- A **missing entitlement** is your plan. The feature refuses cleanly and names
+  `/subscribe`.
+
+Switching a module on never grants something your plan does not include, and a
+paid feature never quietly substitutes for a module you turned off.
+
+## What defaults to on
+
+Everything that shipped before the module system defaults on — tickets, duty,
+applications, records and the rest. Anything that **hands out roles** defaults
+**off**: levelling, auto roles, sticky roles, verification, birthdays and
+scheduled posts.
+
+A bot that starts assigning roles the moment it joins is a bot that gets removed,
+so those wait until you ask.
+
+## Switching one off keeps the data
+
+Disable levelling and nobody loses their XP. Disable duty and existing sessions
+stay. The feature stops acting; nothing is deleted. Turn it back on and it picks
+up where it left off — though nothing is recorded while it is off, so reports for
+that period will read as zero.
+
+## Commands
+
+### `/modules`
+
+Turn Braven features on and off for this server
+
+| Subcommand | What it does |
+| --- | --- |
+| `/modules enable` | Switch a feature on |
+| `/modules disable` | Switch a feature off |
+| `/modules view` | Show every feature and whether it is on |

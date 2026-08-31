@@ -1,0 +1,646 @@
+---
+title: Commands
+description: Every Braven command, grouped by what it does. Generated from the bot itself, so it cannot drift.
+---
+
+Braven has 63 commands. You will use about six of them.
+
+This page is generated from the bot's own command definitions, so it is always
+exactly what is registered in your server — not a list somebody forgot to update.
+
+<Callout title="Not seeing a command?">
+  Three reasons, in order of likelihood: the **module is switched off**
+  (`/modules view`), your **plan does not include it** (`/plan`), or Discord has
+  not finished syncing — new commands can take up to an hour to appear globally.
+</Callout>
+
+Most commands need **Manage Server**. The exceptions are the ones members are
+meant to use: `/suggest`, `/rank`, `/xp`, `/birthday set`, `/checksits`,
+`/staff upvote` and the ticket buttons themselves.
+
+## Setup and configuration
+
+### `/setup`
+
+Configure Braven for this server
+
+| Subcommand | What it does |
+| --- | --- |
+| `/setup channel` | Set the channel tickets are opened under |
+| `/setup transcripts` | Set the channel closed-ticket transcripts are posted to |
+| `/setup log` | Set the channel staff actions are logged to |
+| `/setup management` | Set the channel management reports are posted to |
+| `/setup duty` | Configure duty tracking |
+| `/setup modlog` | Set the channel moderation cases are posted to |
+| `/setup suggestions` | Set the channel suggestions are posted to |
+| `/setup loa` | Configure leave of absence |
+| `/setup staff-add` | Add a staff role |
+| `/setup staff-remove` | Remove a staff role |
+| `/setup management-role-add` | Add a management role (sees staff infractions and reports) |
+| `/setup management-role-remove` | Remove a management role |
+| `/setup close-dm` | DM the ticket opener a transcript link and a rating prompt on close |
+| `/setup show` | Show the current configuration |
+
+### `/modules`
+
+Turn Braven features on and off for this server
+
+| Subcommand | What it does |
+| --- | --- |
+| `/modules enable` | Switch a feature on |
+| `/modules disable` | Switch a feature off |
+| `/modules view` | Show every feature and whether it is on |
+
+### `/branding`
+
+Match Braven’s embeds to your server
+
+| Subcommand | What it does |
+| --- | --- |
+| `/branding colour` | Set the colour on every embed Braven posts |
+| `/branding footer` | Set the footer on every embed Braven posts |
+| `/branding reset` | Go back to the defaults |
+| `/branding show` | Show the current branding |
+
+### `/embed`
+
+Build a message embed
+
+| Subcommand | What it does |
+| --- | --- |
+| `/embed generate` | Build an embed and post it |
+| `/embed edit` | Edit an embed Braven posted in this channel |
+
+### `/plan`
+
+Show this server's Braven plan
+
+### `/subscribe`
+
+Upgrade this server or manage billing
+
+### `/referral`
+
+Referral codes
+
+| Subcommand | What it does |
+| --- | --- |
+| `/referral create` | Create a referral code you can share |
+| `/referral claim` | Use someone else’s referral code for this server |
+| `/referral stats` | How many servers your codes have brought in |
+
+### `/api-key`
+
+An API token for this server
+
+| Subcommand | What it does |
+| --- | --- |
+| `/api-key generate` | Create a token, replacing any existing one |
+| `/api-key revoke` | Delete the token |
+| `/api-key status` | Is there a token, and is it used? |
+
+### `/instance`
+
+Run Braven under your own bot application
+
+| Subcommand | What it does |
+| --- | --- |
+| `/instance setup` | Point Braven at your own bot application |
+| `/instance disable` | Go back to the shared bot |
+| `/instance status` | Is the custom instance running? |
+
+## Tickets
+
+### `/panel`
+
+Manage ticket panels
+
+| Subcommand | What it does |
+| --- | --- |
+| `/panel create` | Create a ticket panel |
+| `/panel category` | Add a ticket category to a panel |
+| `/panel post` | Post or repost a panel message |
+| `/panel list` | List panels and categories |
+
+### `/ticket`
+
+Ticket actions, used inside a ticket thread
+
+| Subcommand | What it does |
+| --- | --- |
+| `/ticket claim` | Claim this ticket |
+| `/ticket close` | Close this ticket |
+
+### `/tickets`
+
+Work a ticket: add people, rename it, hand it over
+
+| Subcommand | What it does |
+| --- | --- |
+| `/tickets add` | Add someone to this ticket |
+| `/tickets remove` | Remove someone from this ticket |
+| `/tickets rename` | Rename this ticket |
+| `/tickets transfer` | Hand this ticket to another staff member |
+| `/tickets close-request` | Ask the opener if it can be closed |
+| `/tickets remind` | Nudge the person who opened it |
+| `/tickets reopen` | Reopen a closed ticket |
+| `/tickets delete` | Delete this ticket and its thread. Cannot be undone. |
+
+### `/ticketconfig`
+
+Panel styles, category types, wording and statistics
+
+| Subcommand | What it does |
+| --- | --- |
+| `/ticketconfig style` | Show a panel as a dropdown or as buttons |
+| `/ticketconfig permissions` | Set which roles support this panel |
+| `/ticketconfig kind` | Ask questions before a ticket in this category opens |
+| `/ticketconfig customise` | Rewrite one of Braven’s ticket messages |
+| `/ticketconfig stats` | Ticket volume and response times |
+
+## Staff management
+
+### `/duty`
+
+Clock on and off duty
+
+| Subcommand | What it does |
+| --- | --- |
+| `/duty on` | Go on duty |
+| `/duty off` | Go off duty |
+| `/duty status` | Show who is currently on duty |
+
+### `/activity`
+
+Show a staff member’s activity
+
+### `/leaderboard`
+
+Rank staff activity for a period
+
+### `/quota`
+
+Set and review staff activity quotas
+
+| Subcommand | What it does |
+| --- | --- |
+| `/quota set` | Set the quota for a role |
+| `/quota remove` | Remove the quota from a role |
+| `/quota list` | List quotas in this server |
+| `/quota check` | Run the under-quota report now, without waiting for Monday |
+
+### `/infraction`
+
+Staff infractions: notes, warnings, strikes and demotions
+
+| Subcommand | What it does |
+| --- | --- |
+| `/infraction note` | Record a note about a staff member |
+| `/infraction warn` | Warn a staff member |
+| `/infraction strike` | Strike a staff member |
+| `/infraction demote` | Record a demotion |
+| `/infraction history` | A staff member's infraction history |
+| `/infraction void` | Void an infraction. It stays in the history, marked as taken back. |
+| `/infraction standings` | Everyone currently carrying an active warning or strike |
+| `/infraction config` | How long infractions last and when management gets told |
+
+### `/loa`
+
+Request and manage leave of absence
+
+| Subcommand | What it does |
+| --- | --- |
+| `/loa request` | Request leave of absence |
+| `/loa list` | List LOA requests |
+| `/loa cancel` | Cancel your own pending or active LOA |
+
+### `/form`
+
+Build application, whitelist, appeal and report forms
+
+| Subcommand | What it does |
+| --- | --- |
+| `/form create` | Create a form |
+| `/form list` | List forms and their questions |
+| `/form delete` | Delete a form and its applications |
+| `/form question-add` | Add a question to a form |
+| `/form question-remove` | Remove a question from a form |
+| `/form settings` | Configure review channel, accepted role and gates |
+| `/form post` | Post the Apply panel for a form |
+
+### `/application`
+
+Preset application types, saved types and application panels
+
+| Subcommand | What it does |
+| --- | --- |
+| `/application preset` | Fill a form with a ready-made question set |
+| `/application type-builder` | Save a form’s questions as a type you can reuse |
+| `/application type-apply` | Put a saved type onto a form |
+| `/application type-list` | Show saved types |
+| `/application type-delete` | Delete a saved type |
+| `/application panel-create` | Start a panel offering several applications |
+| `/application panel-add` | Put an application on a panel |
+| `/application panel-post` | Post a panel, or update it after changes |
+| `/application panel-list` | Show application panels |
+| `/application panel-delete` | Delete a panel |
+
+### `/feedback`
+
+Staff feedback
+
+| Subcommand | What it does |
+| --- | --- |
+| `/feedback setup` | Set up the feedback wall |
+| `/feedback wall` | Post or refresh the wall |
+
+### `/staff`
+
+Rate a staff member
+
+| Subcommand | What it does |
+| --- | --- |
+| `/staff upvote` | Say a staff member handled something well |
+| `/staff downvote` | Say a staff member handled something badly |
+
+## Members and roles
+
+### `/autoroles`
+
+Roles given automatically when someone joins
+
+| Subcommand | What it does |
+| --- | --- |
+| `/autoroles create` | Give a role to everyone who joins from now on |
+| `/autoroles delete` | Stop giving a role on join |
+| `/autoroles list` | Show the roles given on join |
+
+### `/stickyroles`
+
+Roles that come back when a member rejoins
+
+| Subcommand | What it does |
+| --- | --- |
+| `/stickyroles create` | Make a role stick to members who leave and return |
+| `/stickyroles delete` | Stop a role from being reapplied, and forget who held it |
+| `/stickyroles list` | Show sticky roles and how many members are remembered |
+
+### `/rolemanager`
+
+Let a role hand out other roles
+
+| Subcommand | What it does |
+| --- | --- |
+| `/rolemanager modify` | Give a role permission to hand out roles |
+| `/rolemanager remove` | Take the power away again |
+| `/rolemanager list` | Who can hand out roles, and who gave them that |
+
+### `/role`
+
+Give or take a role you have been trusted with
+
+| Subcommand | What it does |
+| --- | --- |
+| `/role add` | Give someone a role |
+| `/role remove` | Take a role away from someone |
+
+### `/selfroles`
+
+Panels members use to pick their own roles
+
+| Subcommand | What it does |
+| --- | --- |
+| `/selfroles create` | Start a new panel |
+| `/selfroles option-add` | Add a role to a panel |
+| `/selfroles option-remove` | Take a role off a panel |
+| `/selfroles post` | Post the panel, or repost it after changes |
+| `/selfroles list` | Show this server’s panels |
+| `/selfroles delete` | Delete a panel |
+
+### `/welcome`
+
+Greet new members
+
+| Subcommand | What it does |
+| --- | --- |
+| `/welcome channel` | Post a welcome in a channel |
+| `/welcome dm` | Send a welcome by direct message |
+| `/welcome disable` | Stop welcoming members |
+| `/welcome test` | Show what your welcome looks like, using you |
+| `/welcome show` | Show the current settings and the placeholders |
+
+### `/booster`
+
+Thank members who boost the server
+
+| Subcommand | What it does |
+| --- | --- |
+| `/booster set` | Reply when someone boosts |
+| `/booster disable` | Stop replying to boosts |
+
+### `/verification`
+
+Gate the server behind a verification step
+
+| Subcommand | What it does |
+| --- | --- |
+| `/verification setup` | Configure verification |
+| `/verification embed` | Post the verification message |
+| `/verification lookup` | Has someone verified, and how? |
+
+### `/suggest`
+
+Suggest something for the server
+
+### `/suggestion`
+
+Manage suggestions
+
+| Subcommand | What it does |
+| --- | --- |
+| `/suggestion status` | Set the status of a suggestion |
+| `/suggestion list` | List suggestions |
+
+## Moderation
+
+### `/mod`
+
+Moderation actions
+
+| Subcommand | What it does |
+| --- | --- |
+| `/mod warn` | Warn a member — records a case, no Discord action |
+| `/mod timeout` | Time a member out |
+| `/mod kick` | Kick a member |
+| `/mod ban` | Ban a member from the Discord — not from the game server |
+| `/mod unban` | Lift a Discord ban |
+| `/mod purge` | Bulk delete recent messages in this channel |
+| `/mod slowmode` | Set slowmode in this channel |
+| `/mod lock` | Stop everyone posting in this channel |
+| `/mod edit` | Correct the reason on a case, keeping the old one |
+
+### `/automod`
+
+Configure automatic moderation
+
+| Subcommand | What it does |
+| --- | --- |
+| `/automod set` | Turn a rule on or off and choose what it does |
+| `/automod words` | Set the filtered word list |
+| `/automod links` | Set the allowed link hosts |
+| `/automod exempt` | Exempt a role or channel from one rule |
+| `/automod list` | Show every rule and its settings |
+
+### `/raid`
+
+Raid protection and the new-account gate
+
+| Subcommand | What it does |
+| --- | --- |
+| `/raid on` | Hold every new join for review right now |
+| `/raid off` | Lift raid mode |
+| `/raid config` | Tune the thresholds and the quarantine role |
+| `/raid status` | Show the current settings |
+
+### `/record`
+
+Player punishment log
+
+| Subcommand | What it does |
+| --- | --- |
+| `/record add` | Log a punishment |
+| `/record lookup` | Pull a player's history |
+| `/record view` | Show one case in full |
+| `/record void` | Void a case — it stays in the history, marked void |
+
+### `/mass-unban`
+
+Unban everyone. Cannot be undone.
+
+## FiveM
+
+### `/fivem`
+
+Show your FiveM server’s status in Discord
+
+| Subcommand | What it does |
+| --- | --- |
+| `/fivem setup` | Point Braven at your server |
+| `/fivem status` | Post the auto-updating status embed |
+| `/fivem check` | Poll the server once, now |
+| `/fivem disable` | Stop polling. The settings are kept. |
+
+### `/statschannel`
+
+Channels whose name is a live statistic
+
+| Subcommand | What it does |
+| --- | --- |
+| `/statschannel create` | Turn a channel into a statistic |
+| `/statschannel edit` | Change a statistic channel’s template |
+| `/statschannel delete` | Stop updating a channel’s name |
+| `/statschannel list` | Show statistic channels and their templates |
+
+### `/restarts`
+
+Announce server restarts from txAdmin
+
+| Subcommand | What it does |
+| --- | --- |
+| `/restarts setup` | Set the channel and get the webhook URL for txAdmin |
+| `/restarts disable` | Stop announcing restarts |
+
+### `/tebex`
+
+Look up and verify Tebex payments
+
+| Subcommand | What it does |
+| --- | --- |
+| `/tebex setup` | Get the webhook URL for your Tebex dashboard |
+| `/tebex lookup` | Staff: look up a transaction |
+| `/tebex verify` | Claim a payment you made |
+
+### `/banevidence`
+
+Attach in-game ban logs to player records
+
+| Subcommand | What it does |
+| --- | --- |
+| `/banevidence setup` | Watch a ban-log channel |
+
+### `/sitstracker`
+
+Count which staff answer reports
+
+| Subcommand | What it does |
+| --- | --- |
+| `/sitstracker setup` | Watch a report channel |
+
+### `/checksits`
+
+How many reports you have answered
+
+### `/checkall`
+
+Managers: the sits leaderboard
+
+### `/wipesits`
+
+Managers: clear every recorded sit
+
+### `/gangpriority`
+
+Set up gang priority
+
+| Subcommand | What it does |
+| --- | --- |
+| `/gangpriority setup` | Who may create gangs, and where activity is logged |
+
+### `/gang`
+
+Create and manage gangs
+
+| Subcommand | What it does |
+| --- | --- |
+| `/gang create` | Create a gang and hand it to an owner |
+| `/gang lookup` | Show a gang, its members and its strikes |
+| `/gang list` | Every gang in this server |
+| `/gang upgrade` | Give a gang more slots, or a different tier role |
+| `/gang delete` | Delete a gang and take the role back |
+
+### `/prio`
+
+Gang owners: hand priority to your members
+
+| Subcommand | What it does |
+| --- | --- |
+| `/prio add` | Give someone priority |
+| `/prio remove` | Take priority back |
+
+### `/strike`
+
+Strikes against a gang
+
+| Subcommand | What it does |
+| --- | --- |
+| `/strike add` | Strike a gang. The reason is shown to them. |
+| `/strike remove` | Void a strike |
+| `/strike view` | Show a gang’s strikes |
+
+## Engagement
+
+### `/stickymessage`
+
+Keep a message at the bottom of a channel
+
+| Subcommand | What it does |
+| --- | --- |
+| `/stickymessage create` | Stick a message to a channel |
+| `/stickymessage delete` | Remove a channel’s sticky message |
+| `/stickymessage status` | Pause or resume a sticky message |
+| `/stickymessage list` | Show this server’s sticky messages |
+
+### `/keyword`
+
+Reply automatically when a keyword appears
+
+| Subcommand | What it does |
+| --- | --- |
+| `/keyword create` | Add a keyword response |
+| `/keyword delete` | Remove a keyword response |
+| `/keyword list` | Show this server’s keywords |
+
+### `/poll`
+
+Ask the community
+
+| Subcommand | What it does |
+| --- | --- |
+| `/poll start` | Start a poll |
+| `/poll end` | Close a poll and show the result |
+
+### `/giveaway`
+
+Run a giveaway
+
+| Subcommand | What it does |
+| --- | --- |
+| `/giveaway start` | Start a giveaway |
+| `/giveaway end` | End a giveaway early and draw the winners |
+| `/giveaway reroll` | Draw new winners, excluding the previous ones |
+| `/giveaway list` | Show running giveaways |
+
+### `/level`
+
+Configure levelling and XP
+
+| Subcommand | What it does |
+| --- | --- |
+| `/level setup` | Switch levelling on and set how XP is earned |
+| `/level reward` | Give a role at a level |
+| `/level reward-remove` | Stop giving a role at a level |
+| `/level multiplier` | Multiply XP earned in one channel |
+| `/level exclude-channel` | Stop a channel earning XP entirely |
+| `/level exclude-role` | Stop members with a role earning XP |
+| `/level set` | Set a member's XP outright, for migrating from another bot |
+| `/level reset` | Wipe XP for one member, or for everyone |
+| `/level show` | Current levelling settings |
+
+### `/rank`
+
+Your level and progress on this server
+
+### `/xp`
+
+The XP leaderboard for this server
+
+### `/schedule`
+
+Scheduled and recurring announcements
+
+| Subcommand | What it does |
+| --- | --- |
+| `/schedule add` | Schedule an announcement |
+| `/schedule list` | Scheduled announcements |
+| `/schedule pause` | Stop an announcement without deleting it |
+| `/schedule resume` | Start a paused announcement again |
+| `/schedule remove` | Delete an announcement |
+
+### `/birthday`
+
+Birthdays and staff anniversaries
+
+| Subcommand | What it does |
+| --- | --- |
+| `/birthday set` | Tell the server your birthday. The year is never stored. |
+| `/birthday clear` | Remove your birthday |
+| `/birthday list` | The next birthdays coming up |
+| `/birthday setup` | Configure birthday greetings (admin) |
+
+### `/vanityroles`
+
+Reward members who put your vanity in their status
+
+| Subcommand | What it does |
+| --- | --- |
+| `/vanityroles setup` | Set the vanity and the reward |
+| `/vanityroles disable` | Stop rewarding the vanity |
+
+### `/guildtagrewards`
+
+Reward members who wear your server tag
+
+| Subcommand | What it does |
+| --- | --- |
+| `/guildtagrewards config` | Set the reward role |
+
+### `/statusblacklist`
+
+Terms nobody may advertise in their status
+
+| Subcommand | What it does |
+| --- | --- |
+| `/statusblacklist add` | Blacklist a term |
+| `/statusblacklist remove` | Stop blacklisting a term |
+| `/statusblacklist list` | Show blacklisted terms |
+

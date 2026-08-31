@@ -1,0 +1,43 @@
+---
+title: Moderation actions
+description: "Warn, timeout, kick, ban, purge, slowmode and lock."
+---
+
+The actions themselves are **free on every plan**. A server that cannot remove a
+spammer will not stay installed long enough to upgrade.
+
+Every action writes a numbered case to the [record log](/docs/moderation/records),
+on every tier — so a server that upgrades later finds its history already there.
+
+## Channel tools
+
+Purge, slowmode and lock are Pro. `/mod purge` can filter to one member's messages
+rather than clearing everything.
+
+<Callout title="/mass-unban cannot be undone">
+  It unbans everybody. There is no list of who was unbanned afterwards, because they
+  are no longer banned. Braven asks for confirmation, and that is the only safeguard
+  there is.
+</Callout>
+
+## Commands
+
+### `/mod`
+
+Moderation actions
+
+| Subcommand | What it does |
+| --- | --- |
+| `/mod warn` | Warn a member — records a case, no Discord action |
+| `/mod timeout` | Time a member out |
+| `/mod kick` | Kick a member |
+| `/mod ban` | Ban a member from the Discord — not from the game server |
+| `/mod unban` | Lift a Discord ban |
+| `/mod purge` | Bulk delete recent messages in this channel |
+| `/mod slowmode` | Set slowmode in this channel |
+| `/mod lock` | Stop everyone posting in this channel |
+| `/mod edit` | Correct the reason on a case, keeping the old one |
+
+### `/mass-unban`
+
+Unban everyone. Cannot be undone.

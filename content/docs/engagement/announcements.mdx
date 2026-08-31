@@ -1,0 +1,38 @@
+---
+title: Scheduled announcements
+description: "Recurring and one-off messages posted on a schedule."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+```
+/schedule add channel:#announcements message:Server restarts in 10 minutes cadence:daily time:17:50
+```
+
+Four cadences: **once**, **every N minutes**, **daily** and **weekly**.
+
+## Everything is UTC
+
+Times are UTC and every reply says so. Braven does not guess at your local timezone,
+because a schedule that silently drifts twice a year with daylight saving is worse
+than one you convert once.
+
+## After downtime
+
+If the bot is down when an announcement was due, it does **not** fire a burst of
+catch-up posts when it comes back. It moves to the next real occurrence. Missing one
+announcement is much cheaper than sending twenty at once.
+
+## Commands
+
+### `/schedule`
+
+Scheduled and recurring announcements
+
+| Subcommand | What it does |
+| --- | --- |
+| `/schedule add` | Schedule an announcement |
+| `/schedule list` | Scheduled announcements |
+| `/schedule pause` | Stop an announcement without deleting it |
+| `/schedule resume` | Start a paused announcement again |
+| `/schedule remove` | Delete an announcement |

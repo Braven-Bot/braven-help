@@ -1,0 +1,51 @@
+---
+title: Transcripts
+description: "What is saved when a ticket closes, where it goes, and how long it is kept."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+When a ticket closes, Braven saves the whole conversation as an HTML page —
+messages, authors, timestamps and attachment links — and posts it to your transcript
+channel:
+
+```
+/setup transcripts channel:#ticket-logs
+```
+
+## Searching them
+
+The dashboard's **Transcripts** page searches across every closed ticket by content,
+subject or the member who opened it. That is usually faster than scrolling a log
+channel.
+
+## The close DM
+
+Off by default. Switched on, the person who opened the ticket gets a message when it
+closes, with a link to their transcript and a one-click rating:
+
+```
+/setup close-dm enabled:true rating:true
+```
+
+Ratings show up on the dashboard under **Staff**, credited to whoever claimed the
+ticket. Anyone with DMs from server members switched off simply does not receive it —
+the ticket still closes normally.
+
+## Retention
+
+| Plan | Kept for |
+| --- | --- |
+| Free | Transcripts are not saved |
+| Pro | 90 days |
+| Elite | 1 year |
+
+Transcripts past the window are deleted automatically. If your plan lapses, existing
+transcripts are **not** deleted — the sweep only runs for plans that include
+retention.
+
+<Callout title="Transcripts contain real personal data">
+  They hold other people's messages. Braven escapes everything before rendering, so
+  a transcript cannot run scripts in your browser, but treat the files themselves as
+  sensitive — a transcript channel should not be public.
+</Callout>

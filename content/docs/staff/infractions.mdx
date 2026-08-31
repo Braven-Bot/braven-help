@@ -1,0 +1,93 @@
+---
+title: Staff infractions
+description: Notes, warnings, strikes and demotions on your own staff. Management-only, and separate from player records.
+---
+
+<Callout>Staff infractions are a **Pro** feature. `/subscribe` to enable them.</Callout>
+
+This is the record of how a staff member is doing. It is deliberately **not** the
+same thing as the [player record log](/docs/moderation/records):
+
+- Player records answer *what has this player done* and are quoted back at people in
+  appeals.
+- Infractions answer *should this person still be staff*.
+
+They are separate tables, separate commands and separately gated, so a demotion note
+can never surface in a public punishment lookup.
+
+## Recording one
+
+```
+/infraction note    member:@Alex reason:Covered a double shift, worth remembering
+/infraction warn    member:@Alex reason:Third late start this month
+/infraction strike  member:@Alex reason:Closed a ticket without reading it
+/infraction demote  member:@Alex reason:Stepped down from Senior Mod
+```
+
+Write the reason for whoever reads it in six months, not for yourself today.
+
+| Type | Expires? |
+| --- | --- |
+| **Note** | Never. A memo, not a mark against them. |
+| **Warning** | On your schedule — 60 days by default. |
+| **Strike** | On your schedule — 180 days by default. |
+| **Demotion** | Never. It already happened. |
+
+Override the schedule per infraction with `expires_days:`. Use `0` for "never".
+
+## Who can use it
+
+Management only, and it is checked twice: Discord hides the command from anyone
+without Manage Server, and Braven then checks it against your configured management
+roles:
+
+```
+/setup management-role-add role:@Management
+```
+
+That second check matters — if you grant Manage Server broadly, it is what keeps
+infractions to the people who actually run the rota.
+
+## Reviewing
+
+```
+/infraction history member:@Alex
+/infraction standings
+```
+
+`history` shows everything on one person with their active counts. `standings` shows
+everyone currently carrying an active warning or strike, worst first — the view worth
+glancing at before promotions.
+
+## Taking one back
+
+```
+/infraction void number:12 reason:Wrong person
+```
+
+Voided, not deleted. It stays in the history marked as taken back, along with who
+voided it and why. A manager who can silently erase infractions is a manager nobody
+can be held to.
+
+## The threshold notice
+
+```
+/infraction config warning_days:60 strike_days:180 threshold:3
+```
+
+When somebody reaches the threshold in **active** strikes, Braven posts a note to
+your management channel.
+
+<Callout title="Braven never acts on it">
+  It counts and it tells you. It does not demote anyone, remove a role, or message
+  the staff member. Deciding who is still staff is yours.
+</Callout>
+
+Set `threshold:0` to switch the notice off. Warnings never trigger it, however many
+there are — only strikes.
+
+## On the dashboard
+
+Infractions appear read-only under **Staff** on the dashboard. That is deliberate:
+dashboard access is Manage Server, which is a wider door than the management roles
+above. Issuing and voiding stay in Discord where the narrower check lives.

@@ -1,0 +1,1248 @@
+[
+  {
+    "name": "setup",
+    "description": "Configure Braven for this server",
+    "module": null,
+    "subcommands": [
+      {
+        "name": "channel",
+        "description": "Set the channel tickets are opened under"
+      },
+      {
+        "name": "transcripts",
+        "description": "Set the channel closed-ticket transcripts are posted to"
+      },
+      {
+        "name": "log",
+        "description": "Set the channel staff actions are logged to"
+      },
+      {
+        "name": "management",
+        "description": "Set the channel management reports are posted to"
+      },
+      {
+        "name": "duty",
+        "description": "Configure duty tracking"
+      },
+      {
+        "name": "modlog",
+        "description": "Set the channel moderation cases are posted to"
+      },
+      {
+        "name": "suggestions",
+        "description": "Set the channel suggestions are posted to"
+      },
+      {
+        "name": "loa",
+        "description": "Configure leave of absence"
+      },
+      {
+        "name": "staff-add",
+        "description": "Add a staff role"
+      },
+      {
+        "name": "staff-remove",
+        "description": "Remove a staff role"
+      },
+      {
+        "name": "management-role-add",
+        "description": "Add a management role (sees staff infractions and reports)"
+      },
+      {
+        "name": "management-role-remove",
+        "description": "Remove a management role"
+      },
+      {
+        "name": "close-dm",
+        "description": "DM the ticket opener a transcript link and a rating prompt on close"
+      },
+      {
+        "name": "show",
+        "description": "Show the current configuration"
+      }
+    ]
+  },
+  {
+    "name": "panel",
+    "description": "Manage ticket panels",
+    "module": "tickets",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Create a ticket panel"
+      },
+      {
+        "name": "category",
+        "description": "Add a ticket category to a panel"
+      },
+      {
+        "name": "post",
+        "description": "Post or repost a panel message"
+      },
+      {
+        "name": "list",
+        "description": "List panels and categories"
+      }
+    ]
+  },
+  {
+    "name": "ticket",
+    "description": "Ticket actions, used inside a ticket thread",
+    "module": "tickets",
+    "subcommands": [
+      {
+        "name": "claim",
+        "description": "Claim this ticket"
+      },
+      {
+        "name": "close",
+        "description": "Close this ticket"
+      }
+    ]
+  },
+  {
+    "name": "duty",
+    "description": "Clock on and off duty",
+    "module": "duty",
+    "subcommands": [
+      {
+        "name": "on",
+        "description": "Go on duty"
+      },
+      {
+        "name": "off",
+        "description": "Go off duty"
+      },
+      {
+        "name": "status",
+        "description": "Show who is currently on duty"
+      }
+    ]
+  },
+  {
+    "name": "activity",
+    "description": "Show a staff member’s activity",
+    "module": "activity",
+    "subcommands": []
+  },
+  {
+    "name": "leaderboard",
+    "description": "Rank staff activity for a period",
+    "module": "activity",
+    "subcommands": []
+  },
+  {
+    "name": "quota",
+    "description": "Set and review staff activity quotas",
+    "module": "activity",
+    "subcommands": [
+      {
+        "name": "set",
+        "description": "Set the quota for a role"
+      },
+      {
+        "name": "remove",
+        "description": "Remove the quota from a role"
+      },
+      {
+        "name": "list",
+        "description": "List quotas in this server"
+      },
+      {
+        "name": "check",
+        "description": "Run the under-quota report now, without waiting for Monday"
+      }
+    ]
+  },
+  {
+    "name": "infraction",
+    "description": "Staff infractions: notes, warnings, strikes and demotions",
+    "module": "staffinfractions",
+    "subcommands": [
+      {
+        "name": "note",
+        "description": "Record a note about a staff member"
+      },
+      {
+        "name": "warn",
+        "description": "Warn a staff member"
+      },
+      {
+        "name": "strike",
+        "description": "Strike a staff member"
+      },
+      {
+        "name": "demote",
+        "description": "Record a demotion"
+      },
+      {
+        "name": "history",
+        "description": "A staff member's infraction history"
+      },
+      {
+        "name": "void",
+        "description": "Void an infraction. It stays in the history, marked as taken back."
+      },
+      {
+        "name": "standings",
+        "description": "Everyone currently carrying an active warning or strike"
+      },
+      {
+        "name": "config",
+        "description": "How long infractions last and when management gets told"
+      }
+    ]
+  },
+  {
+    "name": "form",
+    "description": "Build application, whitelist, appeal and report forms",
+    "module": "applications",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Create a form"
+      },
+      {
+        "name": "list",
+        "description": "List forms and their questions"
+      },
+      {
+        "name": "delete",
+        "description": "Delete a form and its applications"
+      },
+      {
+        "name": "question-add",
+        "description": "Add a question to a form"
+      },
+      {
+        "name": "question-remove",
+        "description": "Remove a question from a form"
+      },
+      {
+        "name": "settings",
+        "description": "Configure review channel, accepted role and gates"
+      },
+      {
+        "name": "post",
+        "description": "Post the Apply panel for a form"
+      }
+    ]
+  },
+  {
+    "name": "loa",
+    "description": "Request and manage leave of absence",
+    "module": "loa",
+    "subcommands": [
+      {
+        "name": "request",
+        "description": "Request leave of absence"
+      },
+      {
+        "name": "list",
+        "description": "List LOA requests"
+      },
+      {
+        "name": "cancel",
+        "description": "Cancel your own pending or active LOA"
+      }
+    ]
+  },
+  {
+    "name": "record",
+    "description": "Player punishment log",
+    "module": "records",
+    "subcommands": [
+      {
+        "name": "add",
+        "description": "Log a punishment"
+      },
+      {
+        "name": "lookup",
+        "description": "Pull a player's history"
+      },
+      {
+        "name": "view",
+        "description": "Show one case in full"
+      },
+      {
+        "name": "void",
+        "description": "Void a case — it stays in the history, marked void"
+      }
+    ]
+  },
+  {
+    "name": "suggest",
+    "description": "Suggest something for the server",
+    "module": "suggestions",
+    "subcommands": []
+  },
+  {
+    "name": "suggestion",
+    "description": "Manage suggestions",
+    "module": "suggestions",
+    "subcommands": [
+      {
+        "name": "status",
+        "description": "Set the status of a suggestion"
+      },
+      {
+        "name": "list",
+        "description": "List suggestions"
+      }
+    ]
+  },
+  {
+    "name": "mod",
+    "description": "Moderation actions",
+    "module": "moderation",
+    "subcommands": [
+      {
+        "name": "warn",
+        "description": "Warn a member — records a case, no Discord action"
+      },
+      {
+        "name": "timeout",
+        "description": "Time a member out"
+      },
+      {
+        "name": "kick",
+        "description": "Kick a member"
+      },
+      {
+        "name": "ban",
+        "description": "Ban a member from the Discord — not from the game server"
+      },
+      {
+        "name": "unban",
+        "description": "Lift a Discord ban"
+      },
+      {
+        "name": "purge",
+        "description": "Bulk delete recent messages in this channel"
+      },
+      {
+        "name": "slowmode",
+        "description": "Set slowmode in this channel"
+      },
+      {
+        "name": "lock",
+        "description": "Stop everyone posting in this channel"
+      },
+      {
+        "name": "edit",
+        "description": "Correct the reason on a case, keeping the old one"
+      }
+    ]
+  },
+  {
+    "name": "automod",
+    "description": "Configure automatic moderation",
+    "module": "automod",
+    "subcommands": [
+      {
+        "name": "set",
+        "description": "Turn a rule on or off and choose what it does"
+      },
+      {
+        "name": "words",
+        "description": "Set the filtered word list"
+      },
+      {
+        "name": "links",
+        "description": "Set the allowed link hosts"
+      },
+      {
+        "name": "exempt",
+        "description": "Exempt a role or channel from one rule"
+      },
+      {
+        "name": "list",
+        "description": "Show every rule and its settings"
+      }
+    ]
+  },
+  {
+    "name": "raid",
+    "description": "Raid protection and the new-account gate",
+    "module": "raid",
+    "subcommands": [
+      {
+        "name": "on",
+        "description": "Hold every new join for review right now"
+      },
+      {
+        "name": "off",
+        "description": "Lift raid mode"
+      },
+      {
+        "name": "config",
+        "description": "Tune the thresholds and the quarantine role"
+      },
+      {
+        "name": "status",
+        "description": "Show the current settings"
+      }
+    ]
+  },
+  {
+    "name": "referral",
+    "description": "Referral codes",
+    "module": null,
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Create a referral code you can share"
+      },
+      {
+        "name": "claim",
+        "description": "Use someone else’s referral code for this server"
+      },
+      {
+        "name": "stats",
+        "description": "How many servers your codes have brought in"
+      }
+    ]
+  },
+  {
+    "name": "plan",
+    "description": "Show this server's Braven plan",
+    "module": null,
+    "subcommands": []
+  },
+  {
+    "name": "subscribe",
+    "description": "Upgrade this server or manage billing",
+    "module": null,
+    "subcommands": []
+  },
+  {
+    "name": "modules",
+    "description": "Turn Braven features on and off for this server",
+    "module": null,
+    "subcommands": [
+      {
+        "name": "enable",
+        "description": "Switch a feature on"
+      },
+      {
+        "name": "disable",
+        "description": "Switch a feature off"
+      },
+      {
+        "name": "view",
+        "description": "Show every feature and whether it is on"
+      }
+    ]
+  },
+  {
+    "name": "branding",
+    "description": "Match Braven’s embeds to your server",
+    "module": null,
+    "subcommands": [
+      {
+        "name": "colour",
+        "description": "Set the colour on every embed Braven posts"
+      },
+      {
+        "name": "footer",
+        "description": "Set the footer on every embed Braven posts"
+      },
+      {
+        "name": "reset",
+        "description": "Go back to the defaults"
+      },
+      {
+        "name": "show",
+        "description": "Show the current branding"
+      }
+    ]
+  },
+  {
+    "name": "embed",
+    "description": "Build a message embed",
+    "module": null,
+    "subcommands": [
+      {
+        "name": "generate",
+        "description": "Build an embed and post it"
+      },
+      {
+        "name": "edit",
+        "description": "Edit an embed Braven posted in this channel"
+      }
+    ]
+  },
+  {
+    "name": "autoroles",
+    "description": "Roles given automatically when someone joins",
+    "module": "autoroles",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Give a role to everyone who joins from now on"
+      },
+      {
+        "name": "delete",
+        "description": "Stop giving a role on join"
+      },
+      {
+        "name": "list",
+        "description": "Show the roles given on join"
+      }
+    ]
+  },
+  {
+    "name": "stickyroles",
+    "description": "Roles that come back when a member rejoins",
+    "module": "stickyroles",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Make a role stick to members who leave and return"
+      },
+      {
+        "name": "delete",
+        "description": "Stop a role from being reapplied, and forget who held it"
+      },
+      {
+        "name": "list",
+        "description": "Show sticky roles and how many members are remembered"
+      }
+    ]
+  },
+  {
+    "name": "rolemanager",
+    "description": "Let a role hand out other roles",
+    "module": "rolemanager",
+    "subcommands": [
+      {
+        "name": "modify",
+        "description": "Give a role permission to hand out roles"
+      },
+      {
+        "name": "remove",
+        "description": "Take the power away again"
+      },
+      {
+        "name": "list",
+        "description": "Who can hand out roles, and who gave them that"
+      }
+    ]
+  },
+  {
+    "name": "role",
+    "description": "Give or take a role you have been trusted with",
+    "module": "rolemanager",
+    "subcommands": [
+      {
+        "name": "add",
+        "description": "Give someone a role"
+      },
+      {
+        "name": "remove",
+        "description": "Take a role away from someone"
+      }
+    ]
+  },
+  {
+    "name": "selfroles",
+    "description": "Panels members use to pick their own roles",
+    "module": "selfroles",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Start a new panel"
+      },
+      {
+        "name": "option-add",
+        "description": "Add a role to a panel"
+      },
+      {
+        "name": "option-remove",
+        "description": "Take a role off a panel"
+      },
+      {
+        "name": "post",
+        "description": "Post the panel, or repost it after changes"
+      },
+      {
+        "name": "list",
+        "description": "Show this server’s panels"
+      },
+      {
+        "name": "delete",
+        "description": "Delete a panel"
+      }
+    ]
+  },
+  {
+    "name": "welcome",
+    "description": "Greet new members",
+    "module": "welcome",
+    "subcommands": [
+      {
+        "name": "channel",
+        "description": "Post a welcome in a channel"
+      },
+      {
+        "name": "dm",
+        "description": "Send a welcome by direct message"
+      },
+      {
+        "name": "disable",
+        "description": "Stop welcoming members"
+      },
+      {
+        "name": "test",
+        "description": "Show what your welcome looks like, using you"
+      },
+      {
+        "name": "show",
+        "description": "Show the current settings and the placeholders"
+      }
+    ]
+  },
+  {
+    "name": "booster",
+    "description": "Thank members who boost the server",
+    "module": "booster",
+    "subcommands": [
+      {
+        "name": "set",
+        "description": "Reply when someone boosts"
+      },
+      {
+        "name": "disable",
+        "description": "Stop replying to boosts"
+      }
+    ]
+  },
+  {
+    "name": "stickymessage",
+    "description": "Keep a message at the bottom of a channel",
+    "module": "stickymessages",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Stick a message to a channel"
+      },
+      {
+        "name": "delete",
+        "description": "Remove a channel’s sticky message"
+      },
+      {
+        "name": "status",
+        "description": "Pause or resume a sticky message"
+      },
+      {
+        "name": "list",
+        "description": "Show this server’s sticky messages"
+      }
+    ]
+  },
+  {
+    "name": "keyword",
+    "description": "Reply automatically when a keyword appears",
+    "module": "keywords",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Add a keyword response"
+      },
+      {
+        "name": "delete",
+        "description": "Remove a keyword response"
+      },
+      {
+        "name": "list",
+        "description": "Show this server’s keywords"
+      }
+    ]
+  },
+  {
+    "name": "poll",
+    "description": "Ask the community",
+    "module": "polls",
+    "subcommands": [
+      {
+        "name": "start",
+        "description": "Start a poll"
+      },
+      {
+        "name": "end",
+        "description": "Close a poll and show the result"
+      }
+    ]
+  },
+  {
+    "name": "giveaway",
+    "description": "Run a giveaway",
+    "module": "giveaways",
+    "subcommands": [
+      {
+        "name": "start",
+        "description": "Start a giveaway"
+      },
+      {
+        "name": "end",
+        "description": "End a giveaway early and draw the winners"
+      },
+      {
+        "name": "reroll",
+        "description": "Draw new winners, excluding the previous ones"
+      },
+      {
+        "name": "list",
+        "description": "Show running giveaways"
+      }
+    ]
+  },
+  {
+    "name": "level",
+    "description": "Configure levelling and XP",
+    "module": "levelling",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Switch levelling on and set how XP is earned"
+      },
+      {
+        "name": "reward",
+        "description": "Give a role at a level"
+      },
+      {
+        "name": "reward-remove",
+        "description": "Stop giving a role at a level"
+      },
+      {
+        "name": "multiplier",
+        "description": "Multiply XP earned in one channel"
+      },
+      {
+        "name": "exclude-channel",
+        "description": "Stop a channel earning XP entirely"
+      },
+      {
+        "name": "exclude-role",
+        "description": "Stop members with a role earning XP"
+      },
+      {
+        "name": "set",
+        "description": "Set a member's XP outright, for migrating from another bot"
+      },
+      {
+        "name": "reset",
+        "description": "Wipe XP for one member, or for everyone"
+      },
+      {
+        "name": "show",
+        "description": "Current levelling settings"
+      }
+    ]
+  },
+  {
+    "name": "rank",
+    "description": "Your level and progress on this server",
+    "module": "levelling",
+    "subcommands": []
+  },
+  {
+    "name": "xp",
+    "description": "The XP leaderboard for this server",
+    "module": "levelling",
+    "subcommands": []
+  },
+  {
+    "name": "schedule",
+    "description": "Scheduled and recurring announcements",
+    "module": "scheduled",
+    "subcommands": [
+      {
+        "name": "add",
+        "description": "Schedule an announcement"
+      },
+      {
+        "name": "list",
+        "description": "Scheduled announcements"
+      },
+      {
+        "name": "pause",
+        "description": "Stop an announcement without deleting it"
+      },
+      {
+        "name": "resume",
+        "description": "Start a paused announcement again"
+      },
+      {
+        "name": "remove",
+        "description": "Delete an announcement"
+      }
+    ]
+  },
+  {
+    "name": "birthday",
+    "description": "Birthdays and staff anniversaries",
+    "module": "birthdays",
+    "subcommands": [
+      {
+        "name": "set",
+        "description": "Tell the server your birthday. The year is never stored."
+      },
+      {
+        "name": "clear",
+        "description": "Remove your birthday"
+      },
+      {
+        "name": "list",
+        "description": "The next birthdays coming up"
+      },
+      {
+        "name": "setup",
+        "description": "Configure birthday greetings (admin)"
+      }
+    ]
+  },
+  {
+    "name": "tickets",
+    "description": "Work a ticket: add people, rename it, hand it over",
+    "module": "tickets",
+    "subcommands": [
+      {
+        "name": "add",
+        "description": "Add someone to this ticket"
+      },
+      {
+        "name": "remove",
+        "description": "Remove someone from this ticket"
+      },
+      {
+        "name": "rename",
+        "description": "Rename this ticket"
+      },
+      {
+        "name": "transfer",
+        "description": "Hand this ticket to another staff member"
+      },
+      {
+        "name": "close-request",
+        "description": "Ask the opener if it can be closed"
+      },
+      {
+        "name": "remind",
+        "description": "Nudge the person who opened it"
+      },
+      {
+        "name": "reopen",
+        "description": "Reopen a closed ticket"
+      },
+      {
+        "name": "delete",
+        "description": "Delete this ticket and its thread. Cannot be undone."
+      }
+    ]
+  },
+  {
+    "name": "ticketconfig",
+    "description": "Panel styles, category types, wording and statistics",
+    "module": "tickets",
+    "subcommands": [
+      {
+        "name": "style",
+        "description": "Show a panel as a dropdown or as buttons"
+      },
+      {
+        "name": "permissions",
+        "description": "Set which roles support this panel"
+      },
+      {
+        "name": "kind",
+        "description": "Ask questions before a ticket in this category opens"
+      },
+      {
+        "name": "customise",
+        "description": "Rewrite one of Braven’s ticket messages"
+      },
+      {
+        "name": "stats",
+        "description": "Ticket volume and response times"
+      }
+    ]
+  },
+  {
+    "name": "application",
+    "description": "Preset application types, saved types and application panels",
+    "module": "applications",
+    "subcommands": [
+      {
+        "name": "preset",
+        "description": "Fill a form with a ready-made question set"
+      },
+      {
+        "name": "type-builder",
+        "description": "Save a form’s questions as a type you can reuse"
+      },
+      {
+        "name": "type-apply",
+        "description": "Put a saved type onto a form"
+      },
+      {
+        "name": "type-list",
+        "description": "Show saved types"
+      },
+      {
+        "name": "type-delete",
+        "description": "Delete a saved type"
+      },
+      {
+        "name": "panel-create",
+        "description": "Start a panel offering several applications"
+      },
+      {
+        "name": "panel-add",
+        "description": "Put an application on a panel"
+      },
+      {
+        "name": "panel-post",
+        "description": "Post a panel, or update it after changes"
+      },
+      {
+        "name": "panel-list",
+        "description": "Show application panels"
+      },
+      {
+        "name": "panel-delete",
+        "description": "Delete a panel"
+      }
+    ]
+  },
+  {
+    "name": "fivem",
+    "description": "Show your FiveM server’s status in Discord",
+    "module": "fivem",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Point Braven at your server"
+      },
+      {
+        "name": "status",
+        "description": "Post the auto-updating status embed"
+      },
+      {
+        "name": "check",
+        "description": "Poll the server once, now"
+      },
+      {
+        "name": "disable",
+        "description": "Stop polling. The settings are kept."
+      }
+    ]
+  },
+  {
+    "name": "statschannel",
+    "description": "Channels whose name is a live statistic",
+    "module": "statschannels",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Turn a channel into a statistic"
+      },
+      {
+        "name": "edit",
+        "description": "Change a statistic channel’s template"
+      },
+      {
+        "name": "delete",
+        "description": "Stop updating a channel’s name"
+      },
+      {
+        "name": "list",
+        "description": "Show statistic channels and their templates"
+      }
+    ]
+  },
+  {
+    "name": "restarts",
+    "description": "Announce server restarts from txAdmin",
+    "module": "restarts",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Set the channel and get the webhook URL for txAdmin"
+      },
+      {
+        "name": "disable",
+        "description": "Stop announcing restarts"
+      }
+    ]
+  },
+  {
+    "name": "tebex",
+    "description": "Look up and verify Tebex payments",
+    "module": "tebex",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Get the webhook URL for your Tebex dashboard"
+      },
+      {
+        "name": "lookup",
+        "description": "Staff: look up a transaction"
+      },
+      {
+        "name": "verify",
+        "description": "Claim a payment you made"
+      }
+    ]
+  },
+  {
+    "name": "banevidence",
+    "description": "Attach in-game ban logs to player records",
+    "module": "banevidence",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Watch a ban-log channel"
+      }
+    ]
+  },
+  {
+    "name": "sitstracker",
+    "description": "Count which staff answer reports",
+    "module": "sits",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Watch a report channel"
+      }
+    ]
+  },
+  {
+    "name": "checksits",
+    "description": "How many reports you have answered",
+    "module": "sits",
+    "subcommands": []
+  },
+  {
+    "name": "checkall",
+    "description": "Managers: the sits leaderboard",
+    "module": "sits",
+    "subcommands": []
+  },
+  {
+    "name": "wipesits",
+    "description": "Managers: clear every recorded sit",
+    "module": "sits",
+    "subcommands": []
+  },
+  {
+    "name": "gangpriority",
+    "description": "Set up gang priority",
+    "module": "gangs",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Who may create gangs, and where activity is logged"
+      }
+    ]
+  },
+  {
+    "name": "gang",
+    "description": "Create and manage gangs",
+    "module": "gangs",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Create a gang and hand it to an owner"
+      },
+      {
+        "name": "lookup",
+        "description": "Show a gang, its members and its strikes"
+      },
+      {
+        "name": "list",
+        "description": "Every gang in this server"
+      },
+      {
+        "name": "upgrade",
+        "description": "Give a gang more slots, or a different tier role"
+      },
+      {
+        "name": "delete",
+        "description": "Delete a gang and take the role back"
+      }
+    ]
+  },
+  {
+    "name": "prio",
+    "description": "Gang owners: hand priority to your members",
+    "module": "gangs",
+    "subcommands": [
+      {
+        "name": "add",
+        "description": "Give someone priority"
+      },
+      {
+        "name": "remove",
+        "description": "Take priority back"
+      }
+    ]
+  },
+  {
+    "name": "strike",
+    "description": "Strikes against a gang",
+    "module": "gangs",
+    "subcommands": [
+      {
+        "name": "add",
+        "description": "Strike a gang. The reason is shown to them."
+      },
+      {
+        "name": "remove",
+        "description": "Void a strike"
+      },
+      {
+        "name": "view",
+        "description": "Show a gang’s strikes"
+      }
+    ]
+  },
+  {
+    "name": "vanityroles",
+    "description": "Reward members who put your vanity in their status",
+    "module": "vanityroles",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Set the vanity and the reward"
+      },
+      {
+        "name": "disable",
+        "description": "Stop rewarding the vanity"
+      }
+    ]
+  },
+  {
+    "name": "guildtagrewards",
+    "description": "Reward members who wear your server tag",
+    "module": "guildtags",
+    "subcommands": [
+      {
+        "name": "config",
+        "description": "Set the reward role"
+      }
+    ]
+  },
+  {
+    "name": "statusblacklist",
+    "description": "Terms nobody may advertise in their status",
+    "module": "statusblacklist",
+    "subcommands": [
+      {
+        "name": "add",
+        "description": "Blacklist a term"
+      },
+      {
+        "name": "remove",
+        "description": "Stop blacklisting a term"
+      },
+      {
+        "name": "list",
+        "description": "Show blacklisted terms"
+      }
+    ]
+  },
+  {
+    "name": "verification",
+    "description": "Gate the server behind a verification step",
+    "module": "verification",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Configure verification"
+      },
+      {
+        "name": "embed",
+        "description": "Post the verification message"
+      },
+      {
+        "name": "lookup",
+        "description": "Has someone verified, and how?"
+      }
+    ]
+  },
+  {
+    "name": "mass-unban",
+    "description": "Unban everyone. Cannot be undone.",
+    "module": "moderation",
+    "subcommands": []
+  },
+  {
+    "name": "feedback",
+    "description": "Staff feedback",
+    "module": "feedback",
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Set up the feedback wall"
+      },
+      {
+        "name": "wall",
+        "description": "Post or refresh the wall"
+      }
+    ]
+  },
+  {
+    "name": "staff",
+    "description": "Rate a staff member",
+    "module": "feedback",
+    "subcommands": [
+      {
+        "name": "upvote",
+        "description": "Say a staff member handled something well"
+      },
+      {
+        "name": "downvote",
+        "description": "Say a staff member handled something badly"
+      }
+    ]
+  },
+  {
+    "name": "api-key",
+    "description": "An API token for this server",
+    "module": null,
+    "subcommands": [
+      {
+        "name": "generate",
+        "description": "Create a token, replacing any existing one"
+      },
+      {
+        "name": "revoke",
+        "description": "Delete the token"
+      },
+      {
+        "name": "status",
+        "description": "Is there a token, and is it used?"
+      }
+    ]
+  },
+  {
+    "name": "instance",
+    "description": "Run Braven under your own bot application",
+    "module": null,
+    "subcommands": [
+      {
+        "name": "setup",
+        "description": "Point Braven at your own bot application"
+      },
+      {
+        "name": "disable",
+        "description": "Go back to the shared bot"
+      },
+      {
+        "name": "status",
+        "description": "Is the custom instance running?"
+      }
+    ]
+  }
+]

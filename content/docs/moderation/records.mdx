@@ -1,0 +1,45 @@
+---
+title: Player records
+description: "A numbered, searchable punishment log tied to Discord IDs and in-game identifiers."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+Every moderation action writes a case. Cases are numbered per server and never
+reused.
+
+## Searching
+
+Look a player up by Discord ID, in-game name, or licence identifier — which matters
+in FiveM, where the same person has a Discord account and a game identity that need
+tying together.
+
+## Editing
+
+Cases can be edited, and every edit is recorded with who made it and when. A log
+somebody can quietly rewrite is not a log.
+
+## Expiry
+
+Temporary punishments expire on their own. The case stays in the history marked as
+expired rather than disappearing.
+
+<Callout title="This is not the same as staff infractions">
+  Player records are about players and are visible to staff. [Staff
+  infractions](/docs/staff/infractions) are about your own team and are
+  management-only. Keeping them apart is why a demotion note never turns up in a
+  public punishment lookup.
+</Callout>
+
+## Commands
+
+### `/record`
+
+Player punishment log
+
+| Subcommand | What it does |
+| --- | --- |
+| `/record add` | Log a punishment |
+| `/record lookup` | Pull a player's history |
+| `/record view` | Show one case in full |
+| `/record void` | Void a case — it stays in the history, marked void |

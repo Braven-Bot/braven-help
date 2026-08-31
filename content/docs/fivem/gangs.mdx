@@ -1,0 +1,56 @@
+---
+title: Gangs and priority
+description: "Delegated gang membership with a hard slot ceiling, and strikes."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+Gang owners manage their own members within a slot limit you set, so you are not
+adding and removing roles for thirty gangs by hand.
+
+**Slots are a hard ceiling.** A gang cannot exceed the slots it has been given, and
+slots can be increased but never silently shrink below the members already in.
+
+One person belongs to one gang. Strikes against a gang are counted, expire on a
+schedule, and flag the gang when they cross your threshold.
+
+## Commands
+
+### `/gangpriority`
+
+Set up gang priority
+
+| Subcommand | What it does |
+| --- | --- |
+| `/gangpriority setup` | Who may create gangs, and where activity is logged |
+
+### `/gang`
+
+Create and manage gangs
+
+| Subcommand | What it does |
+| --- | --- |
+| `/gang create` | Create a gang and hand it to an owner |
+| `/gang lookup` | Show a gang, its members and its strikes |
+| `/gang list` | Every gang in this server |
+| `/gang upgrade` | Give a gang more slots, or a different tier role |
+| `/gang delete` | Delete a gang and take the role back |
+
+### `/prio`
+
+Gang owners: hand priority to your members
+
+| Subcommand | What it does |
+| --- | --- |
+| `/prio add` | Give someone priority |
+| `/prio remove` | Take priority back |
+
+### `/strike`
+
+Strikes against a gang
+
+| Subcommand | What it does |
+| --- | --- |
+| `/strike add` | Strike a gang. The reason is shown to them. |
+| `/strike remove` | Void a strike |
+| `/strike view` | Show a gang’s strikes |

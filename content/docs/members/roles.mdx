@@ -1,0 +1,76 @@
+---
+title: Roles
+description: "Auto roles on join, sticky roles, self-assignable panels, and delegated granting."
+---
+
+Four different ways of deciding who holds which role.
+
+**Auto roles** are given when somebody joins. Free.
+
+**Sticky roles** come back if a member leaves and rejoins — so leaving does not shed
+a mute or a blacklist. Pro.
+
+**Self-assignable roles** are panels members use to pick their own roles, with
+buttons or a dropdown. Free.
+
+**Delegated granting** lets a role hand out specific other roles without giving
+anyone Manage Roles. Pro.
+
+<Callout title="Braven's role must sit above the roles it grants">
+  Discord will not let any bot manage a role above its own, whatever its permissions.
+  If roles are not being applied, check the hierarchy first.
+</Callout>
+
+## Commands
+
+### `/autoroles`
+
+Roles given automatically when someone joins
+
+| Subcommand | What it does |
+| --- | --- |
+| `/autoroles create` | Give a role to everyone who joins from now on |
+| `/autoroles delete` | Stop giving a role on join |
+| `/autoroles list` | Show the roles given on join |
+
+### `/stickyroles`
+
+Roles that come back when a member rejoins
+
+| Subcommand | What it does |
+| --- | --- |
+| `/stickyroles create` | Make a role stick to members who leave and return |
+| `/stickyroles delete` | Stop a role from being reapplied, and forget who held it |
+| `/stickyroles list` | Show sticky roles and how many members are remembered |
+
+### `/selfroles`
+
+Panels members use to pick their own roles
+
+| Subcommand | What it does |
+| --- | --- |
+| `/selfroles create` | Start a new panel |
+| `/selfroles option-add` | Add a role to a panel |
+| `/selfroles option-remove` | Take a role off a panel |
+| `/selfroles post` | Post the panel, or repost it after changes |
+| `/selfroles list` | Show this server’s panels |
+| `/selfroles delete` | Delete a panel |
+
+### `/rolemanager`
+
+Let a role hand out other roles
+
+| Subcommand | What it does |
+| --- | --- |
+| `/rolemanager modify` | Give a role permission to hand out roles |
+| `/rolemanager remove` | Take the power away again |
+| `/rolemanager list` | Who can hand out roles, and who gave them that |
+
+### `/role`
+
+Give or take a role you have been trusted with
+
+| Subcommand | What it does |
+| --- | --- |
+| `/role add` | Give someone a role |
+| `/role remove` | Take a role away from someone |

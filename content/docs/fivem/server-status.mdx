@@ -1,0 +1,39 @@
+---
+title: FiveM server status
+description: "A live player count and queue in Discord, updated automatically."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+Braven polls your server's own public endpoints — `/info.json`, `/players.json`
+and `/dynamic.json` — and keeps an embed updated with player count, queue length and
+uptime.
+
+```
+/fivem setup address:play.yourserver.com:30120
+```
+
+## Read-only, always
+
+Braven **never** issues a command to your game server. No RCON, no txAdmin control,
+no in-game bans, no writes of any kind. It reads public endpoints and receives
+webhooks. Anything that would write to your server is deliberately out of scope.
+
+## The players token
+
+`sv_playersToken` exposes player identifiers, which lets Braven tie a Discord
+account to an in-game licence. It is optional, stored **encrypted**, and never
+returned by the dashboard — not even to you. Status polling works fine without it.
+
+## Commands
+
+### `/fivem`
+
+Show your FiveM server’s status in Discord
+
+| Subcommand | What it does |
+| --- | --- |
+| `/fivem setup` | Point Braven at your server |
+| `/fivem status` | Post the auto-updating status embed |
+| `/fivem check` | Poll the server once, now |
+| `/fivem disable` | Stop polling. The settings are kept. |

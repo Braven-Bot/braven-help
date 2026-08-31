@@ -1,0 +1,39 @@
+---
+title: Intake forms
+description: "Ask questions before the ticket opens, so staff start with the details."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+A form attached to a category runs before the ticket opens. The member fills in a
+modal, and their answers are the first thing in the thread — so nobody starts with
+"what is your character name?"
+
+The same engine powers [applications](/docs/staff/applications), whitelist forms,
+ban appeals and player reports. There is one form builder, not four.
+
+## Question types
+
+Short text, paragraph, and a required flag on each. Discord allows 5 questions per
+modal; longer forms run as several pages.
+
+## Where the answers go
+
+Into the ticket thread when it opens, and into the dashboard where they stay
+searchable after the thread is archived.
+
+## Commands
+
+### `/form`
+
+Build application, whitelist, appeal and report forms
+
+| Subcommand | What it does |
+| --- | --- |
+| `/form create` | Create a form |
+| `/form list` | List forms and their questions |
+| `/form delete` | Delete a form and its applications |
+| `/form question-add` | Add a question to a form |
+| `/form question-remove` | Remove a question from a form |
+| `/form settings` | Configure review channel, accepted role and gates |
+| `/form post` | Post the Apply panel for a form |

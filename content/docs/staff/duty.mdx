@@ -1,0 +1,70 @@
+---
+title: Duty tracking
+description: Clock staff on and off shift. Free on every plan, and every activity report is built from it.
+---
+
+Duty tracking answers "who is actually around right now" and, over time, "who has
+been". It is **free on every plan** — deliberately, because every paid analytics
+feature is computed from the sessions it records. If nobody clocks in, activity
+reports and quotas have nothing to work with.
+
+## Setting it up
+
+```
+/setup duty role:@On Duty channel:#duty-log
+```
+
+The role is applied while someone is clocked on and removed when they clock off, so
+members can see at a glance who is available. The channel gets a line each time
+somebody clocks on or off — leave it out if you would rather it stayed quiet.
+
+## Using it
+
+```
+/duty on
+/duty off
+/duty status
+```
+
+`/duty status` shows who is on right now and how long they have been on.
+
+## Auto clock-out
+
+People forget to clock off. Left alone, one forgotten shift becomes a 200-hour
+session that ruins every average you care about.
+
+```
+/setup duty auto_clockout_hours:8
+```
+
+Any session longer than that is closed automatically, and the session is marked as
+auto-closed so you can tell it apart from a real one. The default is 8 hours; the
+range is 1 to 168.
+
+<Callout title="Pick a number slightly longer than a real shift">
+  Too short and you cut people off mid-shift. Too long and forgotten sessions still
+  pollute your numbers. If your shifts are four hours, six is a sensible ceiling.
+</Callout>
+
+## What it feeds
+
+Once staff are clocking in, these start working:
+
+<Cards>
+  <Card
+    title="Activity reports"
+    href="/docs/staff/activity"
+    description="Hours on duty, tickets closed, and how fast people respond."
+  />
+  <Card
+    title="Quotas"
+    href="/docs/staff/quotas"
+    description="Minimum hours and tickets per period, checked weekly."
+  />
+</Cards>
+
+## If duty is switched off
+
+`/modules disable duty` stops it entirely. Existing sessions are kept, and turning it
+back on picks up where it left off. Nothing is deleted — but nothing is recorded
+while it is off either, so activity for that period will read as zero.

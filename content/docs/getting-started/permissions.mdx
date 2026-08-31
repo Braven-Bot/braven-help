@@ -1,0 +1,47 @@
+---
+title: Permissions
+description: "What Braven asks for, why, and what breaks without each one."
+---
+
+Braven does not need Administrator. If an invite link is offering it, it is the
+wrong link — use the button on [bravenbot.com](https://bravenbot.com).
+
+## What it asks for
+
+| Permission | Used for |
+| --- | --- |
+| **Manage Channels** | Creating ticket threads and renaming them. |
+| **Manage Roles** | The On Duty role, reward roles, self-assignable roles, LOA roles. |
+| **Manage Threads** | Working tickets: archiving, adding and removing people. |
+| **Create Private Threads** | Tickets are private threads, so only the opener and staff see them. |
+| **Send Messages in Threads** | Posting inside tickets. |
+| **Embed Links** | Nearly every message Braven sends is an embed. |
+| **Attach Files** | Posting transcripts when a ticket closes. |
+| **Read Message History** | Building transcripts, and measuring first reply time. |
+| **Add Reactions** | Suggestion voting and the FiveM sits tracker. |
+| **Kick / Ban Members** | Only used by `/mod kick` and `/mod ban`. |
+| **Moderate Members** | Timeouts, and automod. |
+
+## The role hierarchy catch
+
+Discord will not let any bot manage a role that sits **above its own** in your
+server settings, no matter what permissions it has.
+
+If reward roles, the On Duty role or LOA roles are not being applied, this is
+almost always why. Drag Braven's role above the roles it needs to hand out.
+
+<Callout title="Braven tells you what is missing">
+  When a permission is missing, Braven names the exact permission and the exact
+  channel rather than failing silently. If something is not working and you have
+  seen no message, permissions are probably not the cause.
+</Callout>
+
+## Privileged intents
+
+Two features need privileged intents enabled on the bot, which is already done on
+the hosted version:
+
+- **Server Members** — the join gate, raid protection, sticky roles and welcomes.
+- **Presence** — vanity role rewards and the status blacklist.
+
+Without Presence, those two features are simply inert; nothing else is affected.

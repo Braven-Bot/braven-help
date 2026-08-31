@@ -1,0 +1,31 @@
+---
+title: Statistic channels
+description: "Voice channels whose name is a live number."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+A channel named `Players: 64/128` that updates itself. Members read it from the
+channel list without opening anything.
+
+Available statistics include player count, queue length, server status, member count
+and open tickets.
+
+<Callout title="Discord rate-limits channel renames hard">
+  Two renames per ten minutes, per channel. Braven respects that, so a stats channel
+  updates every few minutes rather than every few seconds. This is a Discord limit,
+  not a Braven one.
+</Callout>
+
+## Commands
+
+### `/statschannel`
+
+Channels whose name is a live statistic
+
+| Subcommand | What it does |
+| --- | --- |
+| `/statschannel create` | Turn a channel into a statistic |
+| `/statschannel edit` | Change a statistic channel’s template |
+| `/statschannel delete` | Stop updating a channel’s name |
+| `/statschannel list` | Show statistic channels and their templates |

@@ -1,0 +1,55 @@
+---
+title: Categories
+description: "The options on a panel, and what each one controls."
+---
+
+A category is one option on a [panel](/docs/tickets/panels). It decides everything
+about the tickets opened from it.
+
+| Setting | What it does |
+| --- | --- |
+| **Label** | What members see. Up to 80 characters. |
+| **Description** | The line under the label in a dropdown. |
+| **Emoji** | Shown beside the label. |
+| **Button colour** | Only used when the panel is styled as buttons. |
+| **Parent channel** | Open these tickets somewhere other than the server default. |
+| **Support roles** | Who can see these tickets, on top of the panel's roles. |
+| **Opening message** | The first thing posted inside the ticket. |
+| **Intake form** | A [form](/docs/tickets/forms) the member fills in first. |
+
+## How support roles stack
+
+Category roles, then the panel's roles, then your server's staff roles. The most
+specific wins, which is what lets one category be handled by a different team
+without reconfiguring the whole server.
+
+## Category types
+
+Beyond a standard ticket, a category can be an **enquiry**, **bug report**,
+**appeal** or **player report**. The type decides which preset intake form it
+starts from — a report asks who you are reporting and for what; an appeal asks
+which ban you are appealing.
+
+Set `custom` if you built the form yourself.
+
+## Limits
+
+Free servers get 3 categories, Pro 15, Elite unlimited. Discord caps any single
+panel at 25 regardless.
+
+Removing a category **archives** it. Tickets already opened under it keep working
+and keep their history — the option just disappears from the panel.
+
+## Commands
+
+### `/ticketconfig`
+
+Panel styles, category types, wording and statistics
+
+| Subcommand | What it does |
+| --- | --- |
+| `/ticketconfig style` | Show a panel as a dropdown or as buttons |
+| `/ticketconfig permissions` | Set which roles support this panel |
+| `/ticketconfig kind` | Ask questions before a ticket in this category opens |
+| `/ticketconfig customise` | Rewrite one of Braven’s ticket messages |
+| `/ticketconfig stats` | Ticket volume and response times |

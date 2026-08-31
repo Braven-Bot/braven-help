@@ -1,0 +1,43 @@
+---
+title: Activity reports
+description: "Hours on duty, tickets handled, and how quickly staff respond."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+Everything here is computed from [duty sessions](/docs/staff/duty) and ticket
+history. If nobody clocks in, these read as zero.
+
+## What is measured
+
+| Metric | Meaning |
+| --- | --- |
+| **Duty hours** | Time clocked on. |
+| **Tickets claimed** | How many they picked up. |
+| **Tickets closed** | How many they finished. |
+| **Median first reply** | How long a member waits for a staff answer. |
+| **Median close time** | How long a ticket stays open. |
+
+Medians, not averages, deliberately — one ticket left open over a holiday weekend
+would wreck an average and tell you nothing about a normal day.
+
+## Reading it
+
+`/activity member:@Alex days:30` for one person, `/leaderboard days:7` to rank the
+team. The dashboard shows the same data as charts over time.
+
+<Callout title="These are conversation starters">
+  A low number can mean somebody is slacking, or that they work a quiet timezone, or
+  that they spent the week on one enormous case. The numbers tell you where to look,
+  not what to conclude.
+</Callout>
+
+## Commands
+
+### `/activity`
+
+Show a staff member’s activity
+
+### `/leaderboard`
+
+Rank staff activity for a period

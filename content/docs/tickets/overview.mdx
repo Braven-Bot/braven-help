@@ -1,0 +1,40 @@
+---
+title: How tickets work
+description: "Panels, categories, threads and transcripts — the whole flow in one page."
+---
+
+A member clicks a panel, a private thread opens, staff work it, and a transcript
+is saved when it closes. Four pieces:
+
+**[Panels](/docs/tickets/panels)** are the message members click. One panel holds up
+to 25 options.
+
+**[Categories](/docs/tickets/categories)** are the options on it. Each one decides
+where the ticket opens, who can see it, and whether the member fills in a
+[form](/docs/tickets/forms) first.
+
+**Tickets** are private threads. Only the opener and your staff roles can see one,
+so you are not managing channel permissions per ticket, and your channel list does
+not fill up with dead `ticket-0042` channels.
+
+**[Transcripts](/docs/tickets/transcripts)** are saved when a ticket closes and
+posted to your transcript channel.
+
+## The numbering
+
+Tickets are numbered per server, starting at 1. Numbers are never reused, so
+"ticket 46" means one thing forever.
+
+## Claiming
+
+On Pro and above, staff claim a ticket before working it, which stops two people
+answering the same person. Claiming is recorded, so [activity
+reports](/docs/staff/activity) can tell you who handled what.
+
+## Closing
+
+Closing archives the thread, saves the transcript, and — if you have switched it on
+with `/setup close-dm` — sends the opener a copy along with a rating prompt.
+
+Reopening is possible for 7 days. After that the thread stays archived and the
+transcript is the record.

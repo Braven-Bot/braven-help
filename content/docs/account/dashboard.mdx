@@ -1,0 +1,42 @@
+---
+title: The dashboard
+description: What you can do at bravenbot.com/dashboard, and what stays in Discord.
+---
+
+**[bravenbot.com/dashboard](https://bravenbot.com/dashboard)** — sign in with Discord
+and pick a server. You see every server where you have **Manage Server** and Braven
+is installed.
+
+## What is there
+
+| Page | What it does |
+| --- | --- |
+| **Overview** | Ticket volume, duty hours, activity at a glance. |
+| **Ticket panels** | The full [panel builder](/docs/tickets/panels) with a live preview. |
+| **Modules** | Switch features on and off. |
+| **Settings** | Channels, staff roles, and the rest of `/setup`. |
+| **Staff** | Quotas, LOA, [infractions](/docs/staff/infractions), ticket ratings. |
+| **Levelling** | XP settings, reward roles, leaderboard. |
+| **Engagement** | Scheduled announcements and birthdays. |
+| **Transcripts** | Search closed tickets by content, member or subject. |
+
+## Read-only on the free tier
+
+Free servers can see everything and change nothing. Every command still works in
+Discord on every tier — the dashboard is a convenience, never the only way in.
+
+## Why some things stay in Discord
+
+A few actions are deliberately not on the dashboard:
+
+- **Approving an LOA** grants a Discord role, so it happens where the bot can act.
+- **Issuing or voiding infractions** is gated on your management roles, which is a
+  narrower check than dashboard access.
+- **Levelling and schedule rules** are enforced by the bot; a second implementation
+  behind a write API is how two systems start disagreeing.
+
+## Posting is queued
+
+When you post or save a panel, the dashboard hands the job to the bot rather than
+doing it directly — the dashboard has no connection to Discord of its own. It lands
+within about fifteen seconds. The button says so rather than pretending it is done.

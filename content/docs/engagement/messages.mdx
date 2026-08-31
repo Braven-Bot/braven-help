@@ -1,0 +1,37 @@
+---
+title: Sticky messages and keywords
+description: "Keep a message at the bottom of a channel, or reply when a keyword appears."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+**Sticky messages** stay at the bottom of a channel as people talk. Braven reposts
+and deletes the old copy — posting before deleting, so there is never a moment where
+the sticky does not exist.
+
+**Keyword responses** reply automatically when a message matches. Match on a whole
+word, anywhere in the message, or exactly. Each keyword has its own cooldown so a
+busy channel does not turn into a bot conversation.
+
+## Commands
+
+### `/stickymessage`
+
+Keep a message at the bottom of a channel
+
+| Subcommand | What it does |
+| --- | --- |
+| `/stickymessage create` | Stick a message to a channel |
+| `/stickymessage delete` | Remove a channel’s sticky message |
+| `/stickymessage status` | Pause or resume a sticky message |
+| `/stickymessage list` | Show this server’s sticky messages |
+
+### `/keyword`
+
+Reply automatically when a keyword appears
+
+| Subcommand | What it does |
+| --- | --- |
+| `/keyword create` | Add a keyword response |
+| `/keyword delete` | Remove a keyword response |
+| `/keyword list` | Show this server’s keywords |

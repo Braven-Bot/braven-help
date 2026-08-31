@@ -1,0 +1,77 @@
+---
+title: Activity quotas
+description: Minimum hours and tickets per period, checked automatically every Monday.
+---
+
+<Callout>Quotas are a **Pro** feature. `/subscribe` to enable them.</Callout>
+
+A quota is the answer to the question every server owner has and cannot usually
+answer: *which of my thirty staff actually did anything this week?*
+
+## Setting one
+
+```
+/quota set role:@Moderator hours:5 tickets:10 period_days:7
+```
+
+That reads as: anyone with `@Moderator` should be on duty at least 5 hours and close
+at least 10 tickets every 7 days.
+
+**Quotas attach to a role, not a person.** They survive promotions, demotions and
+turnover — promote someone into the role and the quota applies to them from that
+moment, with nothing to reconfigure.
+
+| Option | Range | Notes |
+| --- | --- | --- |
+| `hours` | 0–336 | Hours clocked on [duty](/docs/staff/duty). |
+| `tickets` | 0–10,000 | Tickets they closed. |
+| `period_days` | 1–90 | The window. Defaults to 7. |
+
+At least one of `hours` or `tickets` must be above zero — a quota requiring nothing
+is just noise in the weekly report.
+
+## Both requirements must be met
+
+A quota of "5 hours and 10 tickets" is **not** satisfied by twenty hours and no
+tickets. If you only care about one, set the other to `0`.
+
+## The weekly report
+
+Every Monday at 09:00 UTC, Braven posts the under-quota report to your management
+channel:
+
+```
+/setup management channel:#management
+```
+
+Without that channel set, quotas still record but nothing is posted.
+
+The report names everyone below their quota, shows what they actually did, and skips
+anyone on [approved LOA](/docs/staff/loa) — the whole point of approving leave is
+that it excuses the quota.
+
+Do not want to wait for Monday:
+
+```
+/quota check
+```
+
+Same evaluation, run now, answering in the channel you typed it in.
+
+## Managing them
+
+```
+/quota list
+/quota remove role:@Moderator
+```
+
+<Callout title="Quotas are a conversation starter, not an enforcement tool">
+  Braven never demotes anyone, removes a role, or messages the person who missed
+  their quota. It tells management who is behind and leaves the decision to you — a
+  bot that fired volunteers automatically would not last a week.
+</Callout>
+
+## If your plan lapses
+
+Quota rows are kept. The weekly report simply stops until you upgrade again, and
+resumes with the same quotas still configured.

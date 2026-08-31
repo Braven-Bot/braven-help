@@ -1,0 +1,47 @@
+---
+title: Billing
+description: "Subscribing, changing plan, invoices and cancelling."
+---
+
+`/subscribe` gives you a checkout link for this server. Billing is **per server** —
+each one is subscribed separately.
+
+## Managing an existing subscription
+
+`/subscribe` again opens the Stripe billing portal, where you can change plan, update
+your card, download invoices and cancel. Braven never sees your card details.
+
+## Cancelling
+
+Your plan runs to the end of the period you have paid for, then drops to free.
+Nothing is deleted — see [plans](/docs/account/plans).
+
+## Failed payments
+
+Paid features keep working for three days after a failed payment, so a declined card
+does not take down your ticket system mid-shift.
+
+## Referrals
+
+`/referral` creates a code. FiveM runs on community recommendations, and the credit
+goes to whoever referred the server.
+
+## Commands
+
+### `/subscribe`
+
+Upgrade this server or manage billing
+
+### `/plan`
+
+Show this server's Braven plan
+
+### `/referral`
+
+Referral codes
+
+| Subcommand | What it does |
+| --- | --- |
+| `/referral create` | Create a referral code you can share |
+| `/referral claim` | Use someone else’s referral code for this server |
+| `/referral stats` | How many servers your codes have brought in |

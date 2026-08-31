@@ -1,0 +1,54 @@
+---
+title: Working a ticket
+description: "Claim, add people, rename, hand over, close and reopen."
+---
+
+Everything here runs **inside the ticket thread**.
+
+## The usual flow
+
+Claim it, answer, close it. The buttons on the first message cover all three, and
+the commands below do the same thing when you need more control.
+
+## Close requests
+
+`/tickets close-request` asks the opener to confirm rather than closing on them
+mid-sentence. They get Yes and No buttons; either way the thread does not sit open
+for a week waiting.
+
+## Reopening
+
+A closed ticket can be reopened by staff for **7 days**. After that the thread stays
+archived and the [transcript](/docs/tickets/transcripts) is the record.
+
+## Deleting
+
+`/tickets delete` removes the thread entirely. The row and its transcript are kept,
+so it still appears in reports and dashboard search — but the conversation in Discord
+is gone and cannot be brought back.
+
+## Commands
+
+### `/ticket`
+
+Ticket actions, used inside a ticket thread
+
+| Subcommand | What it does |
+| --- | --- |
+| `/ticket claim` | Claim this ticket |
+| `/ticket close` | Close this ticket |
+
+### `/tickets`
+
+Work a ticket: add people, rename it, hand it over
+
+| Subcommand | What it does |
+| --- | --- |
+| `/tickets add` | Add someone to this ticket |
+| `/tickets remove` | Remove someone from this ticket |
+| `/tickets rename` | Rename this ticket |
+| `/tickets transfer` | Hand this ticket to another staff member |
+| `/tickets close-request` | Ask the opener if it can be closed |
+| `/tickets remind` | Nudge the person who opened it |
+| `/tickets reopen` | Reopen a closed ticket |
+| `/tickets delete` | Delete this ticket and its thread. Cannot be undone. |

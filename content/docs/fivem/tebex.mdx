@@ -1,0 +1,27 @@
+---
+title: Tebex payments
+description: "Verify donations and grant roles automatically."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+Tebex sends a webhook on payment, and Braven records the transaction and can grant a
+role for it.
+
+`/tebex lookup` checks a transaction ID, which is how you answer "I paid and did not
+get my perks" without leaving Discord.
+
+Chargebacks are recorded too, so a refunded donation does not leave someone holding a
+role they no longer paid for.
+
+## Commands
+
+### `/tebex`
+
+Look up and verify Tebex payments
+
+| Subcommand | What it does |
+| --- | --- |
+| `/tebex setup` | Get the webhook URL for your Tebex dashboard |
+| `/tebex lookup` | Staff: look up a transaction |
+| `/tebex verify` | Claim a payment you made |

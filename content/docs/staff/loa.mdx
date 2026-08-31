@@ -1,0 +1,41 @@
+---
+title: Leave of absence
+description: "Staff request time off, management approves, and quotas skip them while they are away."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+A staff member requests leave, management approves it, and Braven applies a role for
+the dates and removes it afterwards. Anyone on approved LOA is skipped by the weekly
+[quota report](/docs/staff/quotas) — which is the entire point.
+
+## Setting it up
+
+```
+/setup loa role:@On Leave
+/setup management channel:#management
+```
+
+Requests go to the management channel with Approve and Deny buttons.
+
+## Approving stays in Discord
+
+It grants a Discord role, so it happens where the bot can carry it out. The dashboard
+shows LOA as a record but does not approve it.
+
+## What happens on the dates
+
+The role is applied when the leave starts and removed when it ends, automatically. If
+somebody comes back early, cancelling the LOA removes the role immediately.
+
+## Commands
+
+### `/loa`
+
+Request and manage leave of absence
+
+| Subcommand | What it does |
+| --- | --- |
+| `/loa request` | Request leave of absence |
+| `/loa list` | List LOA requests |
+| `/loa cancel` | Cancel your own pending or active LOA |

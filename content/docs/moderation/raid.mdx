@@ -1,0 +1,34 @@
+---
+title: Raid protection
+description: "Lock the door when joins spike, and hold new accounts for review."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+Two defences, both needing the Server Members intent.
+
+**Join-rate lockdown** watches how many accounts join in a window. Cross the
+threshold and new members are held for review for 30 minutes. Lift it early with
+`/raid off`.
+
+**The account-age gate** holds accounts newer than the age you set, which is the
+single most effective filter against throwaway raid accounts.
+
+Held members get no [welcome message](/docs/members/welcome) and no auto roles until
+they are let through — a raid should not produce a wall of greetings for accounts you
+are about to ban.
+
+Everything is announced in your modlog channel so you know it happened.
+
+## Commands
+
+### `/raid`
+
+Raid protection and the new-account gate
+
+| Subcommand | What it does |
+| --- | --- |
+| `/raid on` | Hold every new join for review right now |
+| `/raid off` | Lift raid mode |
+| `/raid config` | Tune the thresholds and the quarantine role |
+| `/raid status` | Show the current settings |

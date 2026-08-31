@@ -1,0 +1,68 @@
+---
+title: Levelling and XP
+description: "Members earn XP for talking, and roles as they level up."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+Off by default — it hands out roles, so it waits until you ask.
+
+```
+/level setup enabled:true
+/level reward level:5 role:@Regular
+```
+
+## The curve
+
+Level *n* costs `5n² + 50n + 100` XP more than the level before it. That is the same
+curve MEE6 and Arcane use, deliberately: members compare the numbers, and a curve
+that made level 10 arrive twice as fast would read as broken rather than generous.
+
+## The cooldown
+
+By default a member earns XP at most once every 60 seconds. Without it, levelling
+ranks whoever spams "." in a quiet channel rather than who actually shows up.
+
+## Tuning it
+
+| Setting | Default |
+| --- | --- |
+| XP per message | 15 |
+| Cooldown | 60s |
+| Level-up announcement | In the channel they were talking in |
+| Reward roles | Stack as you pass each level |
+
+Channels can be excluded entirely or given a multiplier — `0` earns nothing, `2`
+earns double. Roles can be excluded too, which is how you keep staff off a public
+leaderboard.
+
+## Migrating from another bot
+
+`/level set member:@Alex xp:12500` sets someone's total outright, so you can carry
+levels over rather than resetting everybody to zero.
+
+## Commands
+
+### `/level`
+
+Configure levelling and XP
+
+| Subcommand | What it does |
+| --- | --- |
+| `/level setup` | Switch levelling on and set how XP is earned |
+| `/level reward` | Give a role at a level |
+| `/level reward-remove` | Stop giving a role at a level |
+| `/level multiplier` | Multiply XP earned in one channel |
+| `/level exclude-channel` | Stop a channel earning XP entirely |
+| `/level exclude-role` | Stop members with a role earning XP |
+| `/level set` | Set a member's XP outright, for migrating from another bot |
+| `/level reset` | Wipe XP for one member, or for everyone |
+| `/level show` | Current levelling settings |
+
+### `/rank`
+
+Your level and progress on this server
+
+### `/xp`
+
+The XP leaderboard for this server

@@ -1,0 +1,65 @@
+---
+title: Braven
+description: Staff management and ticketing for FiveM roleplay Discords. Start here.
+---
+
+Braven runs your staff team. Tickets are the way in — panels members click, threads
+your staff work in, transcripts you can search afterwards — but the reason servers
+keep it is everything built on top: who was on duty, who answered, who is meeting
+their quota, and who has not shown up in three weeks.
+
+<Cards>
+  <Card
+    title="Set it up in five minutes"
+    href="/docs/getting-started/quick-start"
+    description="Invite the bot, point it at a channel, post your first ticket panel."
+  />
+  <Card
+    title="Build a ticket panel"
+    href="/docs/tickets/panels"
+    description="The dashboard builder, with a live preview of what members will see."
+  />
+  <Card
+    title="Track staff activity"
+    href="/docs/staff/duty"
+    description="Duty tracking is free on every plan, and everything else is built on it."
+  />
+  <Card
+    title="Commands"
+    href="/docs/getting-started/commands"
+    description="Every command Braven has, grouped by what it does."
+  />
+</Cards>
+
+## How Braven is organised
+
+Three ideas explain nearly everything:
+
+**Panels open tickets.** A panel is a message with a dropdown or buttons. Each option
+is a category, and a category decides where the ticket opens, who can see it, and
+whether the member fills in a form first.
+
+**Modules switch features on and off.** Every feature belongs to a module, and
+`/modules` turns any of them off for your server. A module you have switched off is
+silent — it does not act, and it does not nag.
+
+**Your plan decides what is available.** Free is genuinely usable rather than a demo.
+Paid features refuse cleanly and tell you what would unlock them, and downgrading
+never deletes anything you have already set up.
+
+## Two things worth knowing early
+
+**Braven never touches your game server.** It reads your FiveM server's public status
+endpoints to show player counts, and it receives webhooks from txAdmin and Tebex. It
+issues no in-game commands, no RCON, and no in-game bans. Anything that would write
+to your server is out of scope on purpose.
+
+**Panels do not expire.** A panel posted a year ago keeps working through every
+update, because the buttons carry no hidden state — Braven looks the category up
+when somebody clicks. You will not find yourself reposting panels after an update.
+
+<Callout title="Stuck?">
+  Every page here lists the exact commands involved. If something is not behaving,
+  `/plan` tells you what your server is on and `/modules view` tells you what is
+  switched on — between them they explain most surprises.
+</Callout>

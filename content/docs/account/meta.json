@@ -1,0 +1,4 @@
+{
+  "title": "Your account",
+  "pages": ["plans", "billing", "dashboard", "branding", "api"]
+}

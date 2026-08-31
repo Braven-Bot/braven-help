@@ -1,0 +1,23 @@
+---
+title: Restart announcements
+description: "Announce scheduled restarts from txAdmin in Discord."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+txAdmin sends a webhook when a restart is scheduled, and Braven announces it in the
+channel you pick.
+
+The webhook goes to Braven's API, which forwards it to the bot — the bot itself opens
+no inbound port. `/restarts setup` shows you the exact URL to paste into txAdmin.
+
+## Commands
+
+### `/restarts`
+
+Announce server restarts from txAdmin
+
+| Subcommand | What it does |
+| --- | --- |
+| `/restarts setup` | Set the channel and get the webhook URL for txAdmin |
+| `/restarts disable` | Stop announcing restarts |

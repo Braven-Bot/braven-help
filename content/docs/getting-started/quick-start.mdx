@@ -1,0 +1,88 @@
+---
+title: Quick start
+description: Invite Braven, point it at a channel, and post a working ticket panel in about five minutes.
+---
+
+Three steps gets you a working ticket system. Everything else is optional.
+
+## 1. Invite Braven
+
+Use the **Add to Discord** button on [bravenbot.com](https://bravenbot.com). Accept the
+permissions it asks for — [what each one is for](/docs/getting-started/permissions) —
+and pick the server.
+
+Braven does not need Administrator. If you are being offered it, you are looking at
+the wrong invite link.
+
+## 2. Tell it which channel tickets belong in
+
+In your server:
+
+```
+/setup channel channel:#support
+```
+
+That is the channel tickets open under. Tickets are **private threads** on it, so
+members only ever see their own, and your staff see all of them without you managing
+permissions per ticket.
+
+Two more worth doing now:
+
+```
+/setup staff-add role:@Staff
+/setup transcripts channel:#ticket-logs
+```
+
+The first decides who can see and claim tickets. The second is where a transcript
+gets posted when a ticket closes.
+
+<Callout title="No staff role yet?">
+  Anyone with **Manage Threads** on the channel counts as staff even with no role
+  configured, so you are not locked out while you set things up.
+</Callout>
+
+## 3. Build a panel
+
+A panel is the message members click. Build it in the dashboard:
+
+**[bravenbot.com/dashboard](https://bravenbot.com/dashboard) → your server → Ticket
+panels → New panel**
+
+Give it a channel and a title, add at least one category, then **Post**. You get a
+live preview of the embed as you build it, so nothing is a surprise.
+
+Prefer commands? These do the same thing:
+
+```
+/panel create channel:#support title:Support
+/panel category panel:1 label:General Support
+/panel post panel:1
+```
+
+That is a working ticket system. A member clicks, a thread opens, your staff claim
+it and close it, and the transcript lands in your log channel.
+
+## What to do next
+
+<Cards>
+  <Card
+    title="Turn on duty tracking"
+    href="/docs/staff/duty"
+    description="Free on every plan, and every activity report is built from it."
+  />
+  <Card
+    title="Customise the panel"
+    href="/docs/tickets/panels"
+    description="Colours, images, buttons instead of a dropdown, intake forms."
+  />
+  <Card
+    title="Switch off what you do not want"
+    href="/docs/getting-started/modules"
+    description="Braven ships with a lot. `/modules` turns any of it off."
+  />
+  <Card
+    title="See what your plan includes"
+    href="/docs/account/plans"
+    description="What is free, what is not, and what happens if you downgrade."
+  />
+</Cards>

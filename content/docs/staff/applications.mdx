@@ -1,0 +1,42 @@
+---
+title: Applications
+description: "Staff, whitelist and custom applications, with a review flow."
+---
+
+<Callout>This is a **Pro** feature. `/subscribe` to enable it.</Callout>
+
+Applications use the same [form engine](/docs/tickets/forms) as everything else.
+Braven ships presets for Staff, EMS, Police and Mechanic that you can copy and edit
+rather than starting from a blank page.
+
+## The review flow
+
+Submissions land in your results channel with a **View application** button.
+Accepting or denying asks for a **front-facing reason** shown to the applicant — so
+"denied" is never just "denied".
+
+Accepting can grant a role automatically and DM the applicant.
+
+## Limits
+
+Free servers get no application forms, Pro gets 2, Elite unlimited. Existing forms
+keep working if you downgrade; you just cannot create another.
+
+## Commands
+
+### `/application`
+
+Preset application types, saved types and application panels
+
+| Subcommand | What it does |
+| --- | --- |
+| `/application preset` | Fill a form with a ready-made question set |
+| `/application type-builder` | Save a form’s questions as a type you can reuse |
+| `/application type-apply` | Put a saved type onto a form |
+| `/application type-list` | Show saved types |
+| `/application type-delete` | Delete a saved type |
+| `/application panel-create` | Start a panel offering several applications |
+| `/application panel-add` | Put an application on a panel |
+| `/application panel-post` | Post a panel, or update it after changes |
+| `/application panel-list` | Show application panels |
+| `/application panel-delete` | Delete a panel |

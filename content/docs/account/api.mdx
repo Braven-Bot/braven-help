@@ -1,0 +1,47 @@
+---
+title: API and custom instances
+description: "A read API for your server, and running Braven under your own bot application."
+---
+
+<Callout>This is a **Elite** feature. `/subscribe` to enable it.</Callout>
+
+## The API
+
+`/api-key create` issues a token scoped to your server. The token decides the server
+— there is no way to read another server's data with it.
+
+Read-only, covering tickets, duty sessions and player records. Useful for a website
+that shows staff activity, or for tying Braven's records to your own systems.
+
+Keys are stored hashed. If you lose one, revoke it and make another; it cannot be
+shown to you a second time.
+
+## Custom instances
+
+`/instance` runs Braven under **your own** Discord application — your name, your
+avatar, your bot tag. Members never see the word Braven.
+
+The token is encrypted at rest and never returned by the dashboard. The instance
+serves exactly one server: anything arriving from elsewhere is ignored.
+
+## Commands
+
+### `/api-key`
+
+An API token for this server
+
+| Subcommand | What it does |
+| --- | --- |
+| `/api-key generate` | Create a token, replacing any existing one |
+| `/api-key revoke` | Delete the token |
+| `/api-key status` | Is there a token, and is it used? |
+
+### `/instance`
+
+Run Braven under your own bot application
+
+| Subcommand | What it does |
+| --- | --- |
+| `/instance setup` | Point Braven at your own bot application |
+| `/instance disable` | Go back to the shared bot |
+| `/instance status` | Is the custom instance running? |

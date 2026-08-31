@@ -1,0 +1,28 @@
+---
+title: Verification
+description: "Gate the server behind a button, a captcha, or a minimum account age."
+---
+
+Members verify before they can see the rest of the server, and get a role when they
+do.
+
+| Mode | What it asks |
+| --- | --- |
+| **Button** | One click. Stops the laziest bots. Free. |
+| **Captcha** | An emoji challenge. Pro. |
+| **Account age** | Refuses accounts newer than the age you set. |
+
+The captcha is emoji-based rather than an image — an image captcha would mean a
+rendering dependency, and it stops the same bots either way.
+
+## Commands
+
+### `/verification`
+
+Gate the server behind a verification step
+
+| Subcommand | What it does |
+| --- | --- |
+| `/verification setup` | Configure verification |
+| `/verification embed` | Post the verification message |
+| `/verification lookup` | Has someone verified, and how? |

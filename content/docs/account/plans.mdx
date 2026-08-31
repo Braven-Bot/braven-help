@@ -1,0 +1,80 @@
+---
+title: Plans and limits
+description: What each tier includes, and what happens when a plan changes.
+---
+
+Braven has three tiers. The free one is meant to be genuinely usable — it is how
+most servers start, and plenty never leave it.
+
+| | Free | Pro | Elite |
+|---|---|---|---|
+| Ticket panels | 1 | 5 | Unlimited |
+| Ticket categories | 3 | 15 | Unlimited |
+| Concurrent open tickets | 5 | 100 | Unlimited |
+| Transcripts | — | ✓ | ✓ + 1yr retention |
+| Ticket claiming | — | ✓ | ✓ |
+| Duty system | ✓ | ✓ | ✓ |
+| Activity reports & leaderboards | — | ✓ | ✓ |
+| Activity quotas | — | ✓ | ✓ |
+| Staff infractions | — | ✓ | ✓ |
+| Applications (staff + whitelist) | — | 2 forms | Unlimited |
+| LOA system | — | ✓ | ✓ |
+| Player record log | — | ✓ | ✓ |
+| Moderation actions | ✓ | ✓ | ✓ |
+| Automod, raid protection, channel tools | — | ✓ | ✓ |
+| Auto roles, self-assignable roles | ✓ | ✓ | ✓ |
+| Sticky roles, delegated role granting | — | ✓ | ✓ |
+| Web dashboard | Read-only | ✓ | ✓ |
+| Welcome messages, polls | ✓ | ✓ | ✓ |
+| Booster replies, sticky messages, keywords, giveaways | — | ✓ | ✓ |
+| Levelling and XP | — | ✓ | ✓ |
+| Scheduled announcements | — | ✓ | ✓ |
+| Birthdays and staff anniversaries | — | — | ✓ |
+| FiveM server status embed | — | ✓ | ✓ |
+| Custom branding | — | — | ✓ |
+| Priority support | — | — | ✓ |
+
+Check what you are on:
+
+```
+/plan
+```
+
+## Why moderation is split
+
+The actions themselves — warn, timeout, kick, ban — are **free**. A server that
+cannot remove a spammer will not stay installed long enough to upgrade.
+
+What Pro sells is the layer on top: automod, raid protection, the channel tools, and
+the searchable player record log. Cases are written on every tier, so a server that
+upgrades finds its history already there rather than starting from nothing.
+
+Duty tracking is free for the same reason: every paid analytics feature is built from
+the sessions it records.
+
+## Downgrading never deletes anything
+
+If you drop from Pro to Free with 12 ticket categories, all 12 stay and keep working.
+You are blocked from creating a 13th until you are back under the limit.
+
+The same applies everywhere: quotas, panels, records, levelling XP, infractions. They
+stop being *acted on*, and they are still there when you come back.
+
+<Callout title="There is no trial">
+  The free tier is the trial. Layering a fortnight of Pro on top of a tier that is
+  already usable only created a cliff two weeks after installing.
+</Callout>
+
+## When a payment fails
+
+Paid features keep working for **three days** after a failed payment. A declined card
+should not take down your ticket system mid-shift. After that the server drops to
+free, keeping all its data.
+
+## Feature not working?
+
+In order of likelihood:
+
+1. **The module is off** — `/modules view`. A switched-off module is silent by design.
+2. **Your plan does not include it** — the command will say so and name the tier.
+3. **Braven is missing a permission** — it will tell you which one, in which channel.
