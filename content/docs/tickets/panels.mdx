@@ -33,8 +33,23 @@ Everything about how the embed looks:
 ### Options
 
 **Dropdown** holds up to 25 categories behind one menu. **Buttons** put each category
-on the message itself — better for three or four, unwieldy past that. With buttons you
-also pick each option's colour on the category itself.
+on the message itself — better for three or four, unwieldy past that.
+
+The options themselves are edited here too. Click one to open it, and use the arrows
+to change the order members see. Each option can override the panel it sits on:
+
+| Setting | What it does |
+| --- | --- |
+| **Label**, **Description**, **Emoji** | What members read. Descriptions only show on dropdown panels. |
+| **Button colour** | Buttons panels only. |
+| **Opening message** | The first message in the ticket. Blank uses the default. |
+| **Staff roles** | Handle this option only. Blank falls back to the panel's support roles — which is how one panel can send reports to one team and refunds to another. |
+| **Ticket channel** | Where this option's tickets open. Blank uses your server's ticket channel. |
+| **Open tickets per member** | `0` inherits the panel's limit. Set it here to cap this option on its own. |
+
+Options save one at a time, with their own **Save option** button — separate from the
+panel's Save. Editing an option never changes its ID, so a panel you posted a year ago
+keeps working after you rename it.
 
 ### Behaviour
 
@@ -42,11 +57,31 @@ Who handles these tickets and how they behave:
 
 - **Support roles** — who can see and claim tickets from this panel. Falls back to
   your server's staff roles when empty, so a panel with nothing set still works.
-- **Viewer roles** — can read tickets but not act on them.
-- **Ask before closing** — a confirmation step on the close button.
-- **Keep closed tickets** — a closed ticket keeps its reopen and transcript buttons
-  instead of vanishing.
-- **Open tickets per member** — stops one person opening fifteen.
+- **Viewer roles** — pinged when a ticket opens so they can read it, without being
+  the team on the hook for answering it.
+- **Ask before closing** — a confirmation step on the close button. On by default.
+  Turn it off if your staff close a lot of trivial tickets and the extra click is
+  friction rather than a safety net.
+- **Keep closed tickets** — a closed ticket is locked but stays where it is, with
+  **Reopen** and **Delete ticket** buttons on it, instead of being archived. Nobody
+  can keep talking in it; staff can still read it and pick it back up.
+- **Pin the first message** — pins the opening message in each ticket.
+- **Open tickets per member** — stops one person opening fifteen. `0` means no panel
+  limit; your plan's overall ticket limit still applies and cannot be raised here.
+- **Ticket number padding** — `4` shows ticket 57 as `0057`.
+- **Open ticket name** and **Closed ticket name** — rename the thread using
+  `{counter}`, `{member.name}` and `{guild.name}`. Blank uses the built-in
+  `support-0001` scheme. Anything Braven does not recognise is left as you typed it.
+- **Staff-only thread** — opens a second private thread beside each ticket for staff
+  to talk in. The person who opened the ticket is never in it.
+- **Roles while a ticket is open** — added to the opener when their ticket opens and
+  taken back when it closes. Braven reverses exactly what it did, so changing this
+  setting never strips a role from someone whose ticket predates the change.
+
+<Callout type="warn">
+Renaming a thread is rate limited by Discord to twice every ten minutes. On a busy
+server the closed-ticket rename can be skipped — the ticket still closes.
+</Callout>
 
 ### Embed fields
 
