@@ -1,4 +1,4 @@
-import { createMDX } from 'fumadocs-mdx/next';
+import { createMDX } from "fumadocs-mdx/next";
 
 const withMDX = createMDX();
 
@@ -8,7 +8,7 @@ const config = {
   // Standalone bundles the server and only the node_modules it actually uses,
   // which is what keeps the runtime image small. The Dockerfile copies
   // .next/standalone and expects server.js to be there.
-  output: 'standalone',
+  output: "standalone",
 };
 
 export default withMDX(config);

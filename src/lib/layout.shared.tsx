@@ -1,5 +1,5 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { appName, siteUrl } from './shared';
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import { appName, siteUrl } from "./shared";
 
 /**
  * The chrome around every page.
@@ -22,8 +22,8 @@ export function baseOptions(): BaseLayoutProps {
       ),
     },
     links: [
-      { text: 'Dashboard', url: `${siteUrl}/dashboard`, external: true },
-      { text: 'Pricing', url: `${siteUrl}/pricing`, external: true },
+      { text: "Dashboard", url: `${siteUrl}/dashboard`, external: true },
+      { text: "Pricing", url: `${siteUrl}/pricing`, external: true },
     ],
   };
 }

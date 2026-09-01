@@ -11,17 +11,17 @@
  * Pages that need real explanation — panels, duty, quotas, infractions, plans —
  * are written by hand and deliberately not listed here.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from "node:fs";
 
-const manifest = JSON.parse(readFileSync(process.argv[2], 'utf8'));
+const manifest = JSON.parse(readFileSync(process.argv[2], "utf8"));
 const byName = new Map(manifest.map((command) => [command.name, command]));
 
 /** `plan` marks the tier a feature needs; omit it for free features. */
 const PAGES = [
   {
-    path: 'getting-started/permissions.mdx',
-    title: 'Permissions',
-    description: 'What Braven asks for, why, and what breaks without each one.',
+    path: "getting-started/permissions.mdx",
+    title: "Permissions",
+    description: "What Braven asks for, why, and what breaks without each one.",
     commands: [],
     body: `Braven does not need Administrator. If an invite link is offering it, it is the
 wrong link — use the button on [bravenbot.com](https://bravenbot.com).
@@ -67,10 +67,10 @@ the hosted version:
 Without Presence, those two features are simply inert; nothing else is affected.`,
   },
   {
-    path: 'getting-started/modules.mdx',
-    title: 'Modules',
-    description: 'Switch any Braven feature on or off for your server.',
-    commands: ['modules'],
+    path: "getting-started/modules.mdx",
+    title: "Modules",
+    description: "Switch any Braven feature on or off for your server.",
+    commands: ["modules"],
     body: `Braven ships with a lot. Modules are how you turn off the parts you do not want.
 
 \`\`\`
@@ -109,9 +109,10 @@ up where it left off — though nothing is recorded while it is off, so reports 
 that period will read as zero.`,
   },
   {
-    path: 'tickets/overview.mdx',
-    title: 'How tickets work',
-    description: 'Panels, categories, threads and transcripts — the whole flow in one page.',
+    path: "tickets/overview.mdx",
+    title: "How tickets work",
+    description:
+      "Panels, categories, threads and transcripts — the whole flow in one page.",
     commands: [],
     body: `A member clicks a panel, a private thread opens, staff work it, and a transcript
 is saved when it closes. Four pieces:
@@ -150,10 +151,10 @@ Reopening is possible for 7 days. After that the thread stays archived and the
 transcript is the record.`,
   },
   {
-    path: 'tickets/categories.mdx',
-    title: 'Categories',
-    description: 'The options on a panel, and what each one controls.',
-    commands: ['ticketconfig'],
+    path: "tickets/categories.mdx",
+    title: "Categories",
+    description: "The options on a panel, and what each one controls.",
+    commands: ["ticketconfig"],
     body: `A category is one option on a [panel](/docs/tickets/panels). It decides everything
 about the tickets opened from it.
 
@@ -192,10 +193,10 @@ Removing a category **archives** it. Tickets already opened under it keep workin
 and keep their history — the option just disappears from the panel.`,
   },
   {
-    path: 'tickets/working-a-ticket.mdx',
-    title: 'Working a ticket',
-    description: 'Claim, add people, rename, hand over, close and reopen.',
-    commands: ['ticket', 'tickets'],
+    path: "tickets/working-a-ticket.mdx",
+    title: "Working a ticket",
+    description: "Claim, add people, rename, hand over, close and reopen.",
+    commands: ["ticket", "tickets"],
     body: `Everything here runs **inside the ticket thread**.
 
 ## The usual flow
@@ -221,10 +222,11 @@ so it still appears in reports and dashboard search — but the conversation in 
 is gone and cannot be brought back.`,
   },
   {
-    path: 'tickets/transcripts.mdx',
-    title: 'Transcripts',
-    description: 'What is saved when a ticket closes, where it goes, and how long it is kept.',
-    plan: 'Pro',
+    path: "tickets/transcripts.mdx",
+    title: "Transcripts",
+    description:
+      "What is saved when a ticket closes, where it goes, and how long it is kept.",
+    plan: "Pro",
     commands: [],
     body: `When a ticket closes, Braven saves the whole conversation as an HTML page —
 messages, authors, timestamps and attachment links — and posts it to your transcript
@@ -272,11 +274,12 @@ retention.
 </Callout>`,
   },
   {
-    path: 'tickets/forms.mdx',
-    title: 'Intake forms',
-    description: 'Ask questions before the ticket opens, so staff start with the details.',
-    plan: 'Pro',
-    commands: ['form'],
+    path: "tickets/forms.mdx",
+    title: "Intake forms",
+    description:
+      "Ask questions before the ticket opens, so staff start with the details.",
+    plan: "Pro",
+    commands: ["form"],
     body: `A form attached to a category runs before the ticket opens. The member fills in a
 modal, and their answers are the first thing in the thread — so nobody starts with
 "what is your character name?"
@@ -295,11 +298,12 @@ Into the ticket thread when it opens, and into the dashboard where they stay
 searchable after the thread is archived.`,
   },
   {
-    path: 'staff/activity.mdx',
-    title: 'Activity reports',
-    description: 'Hours on duty, tickets handled, and how quickly staff respond.',
-    plan: 'Pro',
-    commands: ['activity', 'leaderboard'],
+    path: "staff/activity.mdx",
+    title: "Activity reports",
+    description:
+      "Hours on duty, tickets handled, and how quickly staff respond.",
+    plan: "Pro",
+    commands: ["activity", "leaderboard"],
     body: `Everything here is computed from [duty sessions](/docs/staff/duty) and ticket
 history. If nobody clocks in, these read as zero.
 
@@ -328,11 +332,12 @@ team. The dashboard shows the same data as charts over time.
 </Callout>`,
   },
   {
-    path: 'staff/loa.mdx',
-    title: 'Leave of absence',
-    description: 'Staff request time off, management approves, and quotas skip them while they are away.',
-    plan: 'Pro',
-    commands: ['loa'],
+    path: "staff/loa.mdx",
+    title: "Leave of absence",
+    description:
+      "Staff request time off, management approves, and quotas skip them while they are away.",
+    plan: "Pro",
+    commands: ["loa"],
     body: `A staff member requests leave, management approves it, and Braven applies a role for
 the dates and removes it afterwards. Anyone on approved LOA is skipped by the weekly
 [quota report](/docs/staff/quotas) — which is the entire point.
@@ -357,11 +362,12 @@ The role is applied when the leave starts and removed when it ends, automaticall
 somebody comes back early, cancelling the LOA removes the role immediately.`,
   },
   {
-    path: 'staff/applications.mdx',
-    title: 'Applications',
-    description: 'Staff, whitelist and custom applications, with a review flow.',
-    plan: 'Pro',
-    commands: ['application'],
+    path: "staff/applications.mdx",
+    title: "Applications",
+    description:
+      "Staff, whitelist and custom applications, with a review flow.",
+    plan: "Pro",
+    commands: ["application"],
     body: `Applications use the same [form engine](/docs/tickets/forms) as everything else.
 Braven ships presets for Staff, EMS, Police and Mechanic that you can copy and edit
 rather than starting from a blank page.
@@ -380,11 +386,11 @@ Free servers get no application forms, Pro gets 2, Elite unlimited. Existing for
 keep working if you downgrade; you just cannot create another.`,
   },
   {
-    path: 'staff/feedback.mdx',
-    title: 'Staff feedback',
-    description: 'Let members rate the staff who helped them.',
-    plan: 'Pro',
-    commands: ['feedback', 'staff'],
+    path: "staff/feedback.mdx",
+    title: "Staff feedback",
+    description: "Let members rate the staff who helped them.",
+    plan: "Pro",
+    commands: ["feedback", "staff"],
     body: `Members rate a staff member directly with \`/staff upvote\` and \`/staff downvote\`.
 It is separate from [ticket ratings](/docs/tickets/transcripts), which are tied to a
 specific closed ticket.
@@ -393,10 +399,11 @@ Use ticket ratings to measure how support is going. Use this for the member who 
 helped in a voice channel at 2am where no ticket existed.`,
   },
   {
-    path: 'members/roles.mdx',
-    title: 'Roles',
-    description: 'Auto roles on join, sticky roles, self-assignable panels, and delegated granting.',
-    commands: ['autoroles', 'stickyroles', 'selfroles', 'rolemanager', 'role'],
+    path: "members/roles.mdx",
+    title: "Roles",
+    description:
+      "Auto roles on join, sticky roles, self-assignable panels, and delegated granting.",
+    commands: ["autoroles", "stickyroles", "selfroles", "rolemanager", "role"],
     body: `Four different ways of deciding who holds which role.
 
 **Auto roles** are given when somebody joins. Free.
@@ -416,10 +423,10 @@ anyone Manage Roles. Pro.
 </Callout>`,
   },
   {
-    path: 'members/welcome.mdx',
-    title: 'Welcome messages',
-    description: 'Greet new members, and thank the ones who boost.',
-    commands: ['welcome', 'booster'],
+    path: "members/welcome.mdx",
+    title: "Welcome messages",
+    description: "Greet new members, and thank the ones who boost.",
+    commands: ["welcome", "booster"],
     body: `Welcome messages are free. Booster replies are Pro.
 
 Both support placeholders like \`{user}\`, \`{server}\` and \`{count}\`, so a message can
@@ -430,10 +437,11 @@ are let through — otherwise a raid produces a wall of greetings for accounts y
 about to remove.`,
   },
   {
-    path: 'members/verification.mdx',
-    title: 'Verification',
-    description: 'Gate the server behind a button, a captcha, or a minimum account age.',
-    commands: ['verification'],
+    path: "members/verification.mdx",
+    title: "Verification",
+    description:
+      "Gate the server behind a button, a captcha, or a minimum account age.",
+    commands: ["verification"],
     body: `Members verify before they can see the rest of the server, and get a role when they
 do.
 
@@ -447,11 +455,11 @@ The captcha is emoji-based rather than an image — an image captcha would mean 
 rendering dependency, and it stops the same bots either way.`,
   },
   {
-    path: 'members/levelling.mdx',
-    title: 'Levelling and XP',
-    description: 'Members earn XP for talking, and roles as they level up.',
-    plan: 'Pro',
-    commands: ['level', 'rank', 'xp'],
+    path: "members/levelling.mdx",
+    title: "Levelling and XP",
+    description: "Members earn XP for talking, and roles as they level up.",
+    plan: "Pro",
+    commands: ["level", "rank", "xp"],
     body: `Off by default — it hands out roles, so it waits until you ask.
 
 \`\`\`
@@ -489,10 +497,11 @@ leaderboard.
 levels over rather than resetting everybody to zero.`,
   },
   {
-    path: 'members/suggestions.mdx',
-    title: 'Suggestions',
-    description: 'Members suggest things, everyone votes, staff mark the outcome.',
-    commands: ['suggest', 'suggestion'],
+    path: "members/suggestions.mdx",
+    title: "Suggestions",
+    description:
+      "Members suggest things, everyone votes, staff mark the outcome.",
+    commands: ["suggest", "suggestion"],
     body: `\`/suggest\` posts a suggestion with voting buttons. One vote per member — changing
 your mind updates your vote rather than stacking another one, so the count is always
 the real count.
@@ -502,10 +511,10 @@ Staff mark each one accepted, denied or implemented, with a reason.
 Free servers get a limited number of open suggestions; Pro is unlimited.`,
   },
   {
-    path: 'moderation/actions.mdx',
-    title: 'Moderation actions',
-    description: 'Warn, timeout, kick, ban, purge, slowmode and lock.',
-    commands: ['mod', 'mass-unban'],
+    path: "moderation/actions.mdx",
+    title: "Moderation actions",
+    description: "Warn, timeout, kick, ban, purge, slowmode and lock.",
+    commands: ["mod", "mass-unban"],
     body: `The actions themselves are **free on every plan**. A server that cannot remove a
 spammer will not stay installed long enough to upgrade.
 
@@ -524,11 +533,12 @@ rather than clearing everything.
 </Callout>`,
   },
   {
-    path: 'moderation/records.mdx',
-    title: 'Player records',
-    description: 'A numbered, searchable punishment log tied to Discord IDs and in-game identifiers.',
-    plan: 'Pro',
-    commands: ['record'],
+    path: "moderation/records.mdx",
+    title: "Player records",
+    description:
+      "A numbered, searchable punishment log tied to Discord IDs and in-game identifiers.",
+    plan: "Pro",
+    commands: ["record"],
     body: `Every moderation action writes a case. Cases are numbered per server and never
 reused.
 
@@ -556,11 +566,11 @@ expired rather than disappearing.
 </Callout>`,
   },
   {
-    path: 'moderation/automod.mdx',
-    title: 'Automod',
-    description: 'Invites, mass mentions, spam, caps, banned words and links.',
-    plan: 'Pro',
-    commands: ['automod'],
+    path: "moderation/automod.mdx",
+    title: "Automod",
+    description: "Invites, mass mentions, spam, caps, banned words and links.",
+    plan: "Pro",
+    commands: ["automod"],
     body: `Six independent rules, each with its own action and its own exemptions:
 
 | Rule | Catches |
@@ -576,11 +586,12 @@ Each rule deletes, warns, or times the member out. Roles and channels can be exe
 per rule, so staff and your bot-commands channel are not caught by the same net.`,
   },
   {
-    path: 'moderation/raid.mdx',
-    title: 'Raid protection',
-    description: 'Lock the door when joins spike, and hold new accounts for review.',
-    plan: 'Pro',
-    commands: ['raid'],
+    path: "moderation/raid.mdx",
+    title: "Raid protection",
+    description:
+      "Lock the door when joins spike, and hold new accounts for review.",
+    plan: "Pro",
+    commands: ["raid"],
     body: `Two defences, both needing the Server Members intent.
 
 **Join-rate lockdown** watches how many accounts join in a window. Cross the
@@ -597,11 +608,12 @@ are about to ban.
 Everything is announced in your modlog channel so you know it happened.`,
   },
   {
-    path: 'fivem/server-status.mdx',
-    title: 'FiveM server status',
-    description: 'A live player count and queue in Discord, updated automatically.',
-    plan: 'Pro',
-    commands: ['fivem'],
+    path: "fivem/server-status.mdx",
+    title: "FiveM server status",
+    description:
+      "A live player count and queue in Discord, updated automatically.",
+    plan: "Pro",
+    commands: ["fivem"],
     body: `Braven polls your server's own public endpoints — \`/info.json\`, \`/players.json\`
 and \`/dynamic.json\` — and keeps an embed updated with player count, queue length and
 uptime.
@@ -623,11 +635,11 @@ account to an in-game licence. It is optional, stored **encrypted**, and never
 returned by the dashboard — not even to you. Status polling works fine without it.`,
   },
   {
-    path: 'fivem/stats-channels.mdx',
-    title: 'Statistic channels',
-    description: 'Voice channels whose name is a live number.',
-    plan: 'Pro',
-    commands: ['statschannel'],
+    path: "fivem/stats-channels.mdx",
+    title: "Statistic channels",
+    description: "Voice channels whose name is a live number.",
+    plan: "Pro",
+    commands: ["statschannel"],
     body: `A channel named \`Players: 64/128\` that updates itself. Members read it from the
 channel list without opening anything.
 
@@ -641,11 +653,11 @@ and open tickets.
 </Callout>`,
   },
   {
-    path: 'fivem/restarts.mdx',
-    title: 'Restart announcements',
-    description: 'Announce scheduled restarts from txAdmin in Discord.',
-    plan: 'Pro',
-    commands: ['restarts'],
+    path: "fivem/restarts.mdx",
+    title: "Restart announcements",
+    description: "Announce scheduled restarts from txAdmin in Discord.",
+    plan: "Pro",
+    commands: ["restarts"],
     body: `txAdmin sends a webhook when a restart is scheduled, and Braven announces it in the
 channel you pick.
 
@@ -653,11 +665,11 @@ The webhook goes to Braven's API, which forwards it to the bot — the bot itsel
 no inbound port. \`/restarts setup\` shows you the exact URL to paste into txAdmin.`,
   },
   {
-    path: 'fivem/tebex.mdx',
-    title: 'Tebex payments',
-    description: 'Verify donations and grant roles automatically.',
-    plan: 'Pro',
-    commands: ['tebex'],
+    path: "fivem/tebex.mdx",
+    title: "Tebex payments",
+    description: "Verify donations and grant roles automatically.",
+    plan: "Pro",
+    commands: ["tebex"],
     body: `Tebex sends a webhook on payment, and Braven records the transaction and can grant a
 role for it.
 
@@ -668,11 +680,11 @@ Chargebacks are recorded too, so a refunded donation does not leave someone hold
 role they no longer paid for.`,
   },
   {
-    path: 'fivem/sits.mdx',
-    title: 'Sits tracker',
-    description: 'Count which staff actually answer player reports.',
-    plan: 'Pro',
-    commands: ['sitstracker', 'checksits', 'checkall', 'wipesits'],
+    path: "fivem/sits.mdx",
+    title: "Sits tracker",
+    description: "Count which staff actually answer player reports.",
+    plan: "Pro",
+    commands: ["sitstracker", "checksits", "checkall", "wipesits"],
     body: `A staff member reacting to a report message counts as a sit. It is a low-friction way
 of measuring who is answering reports in-game, where no ticket exists.
 
@@ -680,11 +692,12 @@ of measuring who is answering reports in-game, where no ticket exists.
 management leaderboard.`,
   },
   {
-    path: 'fivem/gangs.mdx',
-    title: 'Gangs and priority',
-    description: 'Delegated gang membership with a hard slot ceiling, and strikes.',
-    plan: 'Pro',
-    commands: ['gangpriority', 'gang', 'prio', 'strike'],
+    path: "fivem/gangs.mdx",
+    title: "Gangs and priority",
+    description:
+      "Delegated gang membership with a hard slot ceiling, and strikes.",
+    plan: "Pro",
+    commands: ["gangpriority", "gang", "prio", "strike"],
     body: `Gang owners manage their own members within a slot limit you set, so you are not
 adding and removing roles for thirty gangs by hand.
 
@@ -695,11 +708,11 @@ One person belongs to one gang. Strikes against a gang are counted, expire on a
 schedule, and flag the gang when they cross your threshold.`,
   },
   {
-    path: 'engagement/announcements.mdx',
-    title: 'Scheduled announcements',
-    description: 'Recurring and one-off messages posted on a schedule.',
-    plan: 'Pro',
-    commands: ['schedule'],
+    path: "engagement/announcements.mdx",
+    title: "Scheduled announcements",
+    description: "Recurring and one-off messages posted on a schedule.",
+    plan: "Pro",
+    commands: ["schedule"],
     body: `\`\`\`
 /schedule add channel:#announcements message:Server restarts in 10 minutes cadence:daily time:17:50
 \`\`\`
@@ -719,11 +732,12 @@ catch-up posts when it comes back. It moves to the next real occurrence. Missing
 announcement is much cheaper than sending twenty at once.`,
   },
   {
-    path: 'engagement/birthdays.mdx',
-    title: 'Birthdays and anniversaries',
-    description: 'Birthday greetings, a role for the day, and staff anniversaries.',
-    plan: 'Elite',
-    commands: ['birthday'],
+    path: "engagement/birthdays.mdx",
+    title: "Birthdays and anniversaries",
+    description:
+      "Birthday greetings, a role for the day, and staff anniversaries.",
+    plan: "Elite",
+    commands: ["birthday"],
     body: `Members add their own birthday with \`/birthday set\`. Admins configure where
 greetings post with \`/birthday setup\`.
 
@@ -744,10 +758,10 @@ was actually promoted — which is honest, rather than inventing a date.
 Applied for the day and removed the next, so nobody is still wearing it a week later.`,
   },
   {
-    path: 'engagement/giveaways-polls.mdx',
-    title: 'Giveaways and polls',
-    description: 'Run a giveaway with role requirements, or ask the community.',
-    commands: ['giveaway', 'poll'],
+    path: "engagement/giveaways-polls.mdx",
+    title: "Giveaways and polls",
+    description: "Run a giveaway with role requirements, or ask the community.",
+    commands: ["giveaway", "poll"],
     body: `**Polls** are free. \`/poll\` asks a question with up to 25 options and live results.
 One vote per member, changeable.
 
@@ -756,11 +770,12 @@ role to enter or give boosters bonus entries. Braven draws automatically when it
 ends, and can reroll if a winner does not claim.`,
   },
   {
-    path: 'engagement/messages.mdx',
-    title: 'Sticky messages and keywords',
-    description: 'Keep a message at the bottom of a channel, or reply when a keyword appears.',
-    plan: 'Pro',
-    commands: ['stickymessage', 'keyword'],
+    path: "engagement/messages.mdx",
+    title: "Sticky messages and keywords",
+    description:
+      "Keep a message at the bottom of a channel, or reply when a keyword appears.",
+    plan: "Pro",
+    commands: ["stickymessage", "keyword"],
     body: `**Sticky messages** stay at the bottom of a channel as people talk. Braven reposts
 and deletes the old copy — posting before deleting, so there is never a moment where
 the sticky does not exist.
@@ -770,10 +785,10 @@ word, anywhere in the message, or exactly. Each keyword has its own cooldown so 
 busy channel does not turn into a bot conversation.`,
   },
   {
-    path: 'account/billing.mdx',
-    title: 'Billing',
-    description: 'Subscribing, changing plan, invoices and cancelling.',
-    commands: ['subscribe', 'plan', 'referral'],
+    path: "account/billing.mdx",
+    title: "Billing",
+    description: "Subscribing, changing plan, invoices and cancelling.",
+    commands: ["subscribe", "plan", "referral"],
     body: `\`/subscribe\` gives you a checkout link for this server. Billing is **per server** —
 each one is subscribed separately.
 
@@ -798,11 +813,11 @@ does not take down your ticket system mid-shift.
 goes to whoever referred the server.`,
   },
   {
-    path: 'account/branding.mdx',
-    title: 'Branding',
-    description: 'Match Braven to your server: colour, footer and nickname.',
-    plan: 'Elite',
-    commands: ['branding', 'embed'],
+    path: "account/branding.mdx",
+    title: "Branding",
+    description: "Match Braven to your server: colour, footer and nickname.",
+    plan: "Elite",
+    commands: ["branding", "embed"],
     body: `Set an accent colour and footer used across every embed Braven sends, so it looks
 like part of your server rather than a third-party bot.
 
@@ -813,11 +828,12 @@ panel can look different without losing branding everywhere else.
 builder. That one is free on every plan.`,
   },
   {
-    path: 'account/api.mdx',
-    title: 'API and custom instances',
-    description: 'A read API for your server, and running Braven under your own bot application.',
-    plan: 'Elite',
-    commands: ['api-key', 'instance'],
+    path: "account/api.mdx",
+    title: "API and custom instances",
+    description:
+      "A read API for your server, and running Braven under your own bot application.",
+    plan: "Elite",
+    commands: ["api-key", "instance"],
     body: `## The API
 
 \`/api-key create\` issues a token scoped to your server. The token decides the server
@@ -842,32 +858,34 @@ serves exactly one server: anything arriving from elsewhere is ignored.`,
 let written = 0;
 for (const page of PAGES) {
   const parts = [
-    '---',
+    "---",
     `title: ${page.title}`,
     // Quoted: a description containing a colon is invalid YAML unquoted.
     `description: ${JSON.stringify(page.description)}`,
-    '---',
-    '',
+    "---",
+    "",
   ];
 
   if (page.plan) {
     parts.push(
       `<Callout>This is a **${page.plan}** feature. \`/subscribe\` to enable it.</Callout>`,
-      '',
+      "",
     );
   }
 
-  parts.push(page.body, '');
+  parts.push(page.body, "");
 
   // The command tables are generated so a renamed subcommand shows up as a docs
   // diff rather than a page that quietly lies.
-  const commands = page.commands.map((name) => byName.get(name)).filter(Boolean);
+  const commands = page.commands
+    .map((name) => byName.get(name))
+    .filter(Boolean);
   if (commands.length > 0) {
-    parts.push('## Commands', '');
+    parts.push("## Commands", "");
     for (const command of commands) {
-      parts.push(`### \`/${command.name}\``, '', command.description, '');
+      parts.push(`### \`/${command.name}\``, "", command.description, "");
       if (command.subcommands.length > 0) {
-        parts.push('| Subcommand | What it does |', '| --- | --- |');
+        parts.push("| Subcommand | What it does |", "| --- | --- |");
         for (const sub of command.subcommands) {
           if (sub.subs) {
             for (const inner of sub.subs) {
@@ -876,15 +894,17 @@ for (const page of PAGES) {
               );
             }
           } else {
-            parts.push(`| \`/${command.name} ${sub.name}\` | ${sub.description} |`);
+            parts.push(
+              `| \`/${command.name} ${sub.name}\` | ${sub.description} |`,
+            );
           }
         }
-        parts.push('');
+        parts.push("");
       }
     }
   }
 
-  writeFileSync(`content/docs/${page.path}`, parts.join('\n'));
+  writeFileSync(`content/docs/${page.path}`, parts.join("\n"));
   written += 1;
 }
 
