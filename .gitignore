@@ -21,6 +21,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # others
-.env*.local
+# `.env*.local` alone leaves a plain `.env` committable. This repo is public.
+.env
+.env.*
+!.env.example
 .vercel
 next-env.d.ts
