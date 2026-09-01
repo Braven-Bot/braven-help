@@ -1,5 +1,0 @@
-# esbuild ships prebuilt binaries and needs its install script to select the
-# right one for the platform. pnpm blocks build scripts by default, which is
-# the correct default; this allows the one dependency that genuinely needs it.
-allowBuilds:
-  esbuild: true
