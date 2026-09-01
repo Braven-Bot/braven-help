@@ -1,11 +1,5 @@
 {
   "title": "Your account",
-  "pages": [
-    "plans",
-    "billing",
-    "dashboard",
-    "branding",
-    "api"
-  ],
+  "pages": ["plans", "billing", "dashboard", "branding", "api"],
   "icon": "CreditCard"
 }
