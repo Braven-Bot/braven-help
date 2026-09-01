@@ -51,8 +51,13 @@ html {
   color-scheme: dark;
 }
 
+/* react-remove-scroll writes these as inline styles when a dialog opens, and an
+   inline style can only be beaten by `!important`. Dropping it would put the
+   scrollbar-width gap back on every modal. */
 html > body[data-scroll-locked] {
+  /* biome-ignore lint/complexity/noImportantStyles: overriding an inline style */
   margin-right: 0px !important;
+  /* biome-ignore lint/complexity/noImportantStyles: overriding an inline style */
   --removed-body-scroll-bar-size: 0px !important;
 }
 
